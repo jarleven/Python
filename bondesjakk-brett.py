@@ -1,3 +1,8 @@
+"""
+ Bondesjakk Tic Tac Toe.
+ Inspirert av denne https://inventwithpython.com/chapter10.html
+"""
+
 # Du kan lage ASCII ART Tekst på denne sida: 
 #   http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
 #

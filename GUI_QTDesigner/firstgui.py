@@ -11,9 +11,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_myfirstgui(object):
     def setupUi(self, myfirstgui):
         myfirstgui.setObjectName("myfirstgui")
-        myfirstgui.resize(177, 164)
+        myfirstgui.resize(191, 196)
         self.buttonBox = QtWidgets.QDialogButtonBox(myfirstgui)
-        self.buttonBox.setGeometry(QtCore.QRect(-230, 120, 381, 32))
+        self.buttonBox.setGeometry(QtCore.QRect(-230, 160, 381, 32))
         self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
         self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Close)
         self.buttonBox.setObjectName("buttonBox")
@@ -29,6 +29,9 @@ class Ui_myfirstgui(object):
         self.lcdNumber.setGeometry(QtCore.QRect(100, 30, 31, 23))
         self.lcdNumber.setDigitCount(2)
         self.lcdNumber.setObjectName("lcdNumber")
+        self.label = QtWidgets.QLabel(myfirstgui)
+        self.label.setGeometry(QtCore.QRect(100, 10, 47, 13))
+        self.label.setObjectName("label")
 
         self.retranslateUi(myfirstgui)
         self.buttonBox.accepted.connect(myfirstgui.accept)
@@ -38,6 +41,7 @@ class Ui_myfirstgui(object):
     def retranslateUi(self, myfirstgui):
         _translate = QtCore.QCoreApplication.translate
         myfirstgui.setWindowTitle(_translate("myfirstgui", "My First Gui!"))
+        self.label.setText(_translate("myfirstgui", "Normal"))
 
 
 if __name__ == "__main__":

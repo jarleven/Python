@@ -18,7 +18,7 @@ class MyFirstGuiProgram(Ui_myfirstgui):
         Ui_myfirstgui.__init__(self)
         self.setupUi(dialog)
 
-        # Connect "add" button with a custom function (addInputTextToListbox)
+        # Connect "dial" dialog with a custom function (onDialValueChanged)
     
         self.dial.valueChanged.connect(self.onDialValueChanged)
 
@@ -27,6 +27,9 @@ class MyFirstGuiProgram(Ui_myfirstgui):
 
         text = "Dial value: {v}".format(v=value)
         print(text)
+        text = "Dial value: %d" % value
+        print(text)
+        
         self.progressBar.setProperty("value", value)
         self.lcdNumber.setProperty("value", value)
 
@@ -36,9 +39,10 @@ class MyFirstGuiProgram(Ui_myfirstgui):
         # foreground color
         if value > 50:
             palette.setColor(palette.WindowText, QtGui.QColor(255, 0, 0))
+            self.label.setText("Warning")
         else:
              palette.setColor(palette.WindowText, QtGui.QColor(0, 255, 50))
-                
+             self.label.setText("Normal")   
 
         # set the palette
         self.lcdNumber.setPalette(palette)
@@ -46,10 +50,11 @@ class MyFirstGuiProgram(Ui_myfirstgui):
 
    
 if __name__ == '__main__':
-	app = QtWidgets.QApplication(sys.argv)
-	dialog = QtWidgets.QDialog()
+    app = QtWidgets.QApplication(sys.argv)
+    dialog = QtWidgets.QDialog()
 
-	prog = MyFirstGuiProgram(dialog)
+    prog = MyFirstGuiProgram(dialog)
 
-	dialog.show()
-	sys.exit(app.exec_())
+    dialog.show()
+    #sys.exit(app.exec_())
+    app.exec_()

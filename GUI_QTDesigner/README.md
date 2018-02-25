@@ -1,4 +1,4 @@
-Some Python GUI examples with QT Designer
+Some Python GUI examples with Qt Designer (Qt Creator)
 
 
 ##  Cheat Sheet Ubuntu 17.10
@@ -13,7 +13,7 @@ Some Python GUI examples with QT Designer
  * sudo apt install python-pip
  * sudo apt  install python-pyqt5
 
-## For QT5 Designer and utilities  (qtcreator in Ubuntu Linux)
+## For Qt5 Designer and utilities  (qtcreator in Ubuntu Linux)
 
  * sudo apt-get install qttools5-dev-tools
  * sudo apt-get install qtcreator

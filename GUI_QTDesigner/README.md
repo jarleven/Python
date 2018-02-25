@@ -47,7 +47,14 @@ Run this command to make the Python code from the designer .ui file : pyuic5 -x 
 Will add stuff here later (25.Feb 2018)
 C:\python>pyuic5 -x firstgui.ui -o firstgui.py
 
+Run Python commands in WinPython by startring the "WinPython Command Prompt" found in the C:\WinPython-XXX folder.
+Commands like pip3 install pyinstaller are accessible from the "WinPython Command Prompt".
 
+## Resources
+
+ * http://www.pyinstaller.org/
+ * https://winpython.github.io/
+ 
 
 ## Inspiration and copy paste from the following sites
 

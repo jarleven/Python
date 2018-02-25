@@ -54,3 +54,7 @@ C:\python>pyuic5 -x firstgui.ui -o firstgui.py
 I hope I got to include most of the inspiration I found while googling for how to build a simple Python Qt GUI application.
 I will try to add all sites I have used as examples and inspiration. (Will update this list 25.Feb 2018)
 
+
+ * http://pyinstaller.readthedocs.io/en/stable/installation.html
+ * https://askubuntu.com/questions/651461/where-is-qt5-designer
+ * https://stackoverflow.com/questions/11720835/how-can-i-make-a-application-with-single-exe-file-using-python

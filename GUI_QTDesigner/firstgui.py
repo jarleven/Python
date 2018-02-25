@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'firstgui.ui'
 #
-# Created by: PyQt5 UI code generator 5.9
+# Created by: PyQt5 UI code generator 5.7
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -30,7 +30,7 @@ class Ui_myfirstgui(object):
         self.lcdNumber.setDigitCount(2)
         self.lcdNumber.setObjectName("lcdNumber")
         self.label = QtWidgets.QLabel(myfirstgui)
-        self.label.setGeometry(QtCore.QRect(100, 10, 47, 13))
+        self.label.setGeometry(QtCore.QRect(100, 10, 71, 21))
         self.label.setObjectName("label")
 
         self.retranslateUi(myfirstgui)

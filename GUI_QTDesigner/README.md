@@ -13,15 +13,14 @@ Some Python GUI examples with QT Designer
  * sudo apt install python-pip
  * sudo apt  install python-pyqt5
 
-## For QT5 Designer  (qtcreator in Ubuntu Linux)
+## For QT5 Designer and utilities  (qtcreator in Ubuntu Linux)
 
  * sudo apt-get install qttools5-dev-tools
  * sudo apt-get install qtcreator
-
-TODO. howto do this in ubuntu 
-C:\python>pyuic5 -x firstgui.ui -o firstgui.py
+ * sudo apt install pyqt5-dev-tools
 
 
+Run this command to make the Python code from the designer .ui file : pyuic5 -x firstgui.ui -o firstgui.py
 
 
 ## Git 
@@ -31,3 +30,9 @@ C:\python>pyuic5 -x firstgui.ui -o firstgui.py
  * git add 
  * git commit prog.py -m "Change comment" 
  * git push
+
+
+##  Cheat Sheet Ubuntu 17.10
+
+C:\python>pyuic5 -x firstgui.ui -o firstgui.py
+

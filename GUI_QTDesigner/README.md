@@ -32,6 +32,16 @@ Run this command to make the Python code from the designer .ui file : pyuic5 -x 
  * git push
 
 
+## Make a executable
+
+	pip3 install pyinstaller
+
+	sudo find / -name pyinstaller
+
+	~/.local/bin/pyinstaller prog.py
+
+	~/.local/bin/pyinstaller --onefile prog.py
+
 ##  Cheat Sheet Windows 10
 
 Will add stuff here later (25.Feb 2018)

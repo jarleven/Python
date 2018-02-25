@@ -1,4 +1,4 @@
-Some Python GUI examples with Qt Designer (Qt Creator)
+	Some Python GUI examples with Qt Designer (Qt Creator)
 
 
 ##  Cheat Sheet Ubuntu 17.10
@@ -36,4 +36,11 @@ Run this command to make the Python code from the designer .ui file : pyuic5 -x 
 
 Will add stuff here later (25.Feb 2018)
 C:\python>pyuic5 -x firstgui.ui -o firstgui.py
+
+
+
+## Inspiration and copy paste from the following sites
+
+I hope I got to include most of the inspiration I found while googling for how to build a simple Python Qt GUI application.
+I will try to add all sites I have used as examples and inspiration. (Will update this list 25.Feb 2018)
 

@@ -32,7 +32,7 @@ Run this command to make the Python code from the designer .ui file : pyuic5 -x 
  * git push
 
 
-## Make a executable
+## Make an executable
 
 	pip3 install pyinstaller
 

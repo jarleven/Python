@@ -3,9 +3,12 @@ Some Python GUI examples with QT Designer
 
 ##  Cheat Sheet Ubuntu 17.10
 
+### Python 3
+
  * sudo apt install python3-pip
  * sudo apt  install python3-pyqt5
 
+### Python 2
 
  * sudo apt install python-pip
  * sudo apt  install python-pyqt5

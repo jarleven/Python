@@ -20,9 +20,9 @@ C:\python>pyuic5 -x firstgui.ui -o firstgui.py
 
 
 ## Git 
-sudo apt install git
-git clone https://github.com/jarleven/Python.git
-git pull
-git add 
-git commit prog.py -m "Change comment" 
-git push
+ * sudo apt install git
+ * git clone https://github.com/jarleven/Python.git
+ * git pull
+ * git add 
+ * git commit prog.py -m "Change comment" 
+ * git push

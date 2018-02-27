@@ -14,3 +14,25 @@ Første prosjekt er ei steg for steg oppskrift for bondesjakk i Python
  https://www.udir.no/kl06/PRG1-01/Hele/Hovedomraader
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+sudo apt install python-pip
+
+pip install imutils
+pip install numpy
+pip install cv2
+pip install opencv-python
+pip install simplecv
+pip install pygame
+pip install ndimage
+pip install scipy
+pip install matplotlib
+pip install python-tk
+
+
+pip3 install imutils
+ 

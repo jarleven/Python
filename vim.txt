@@ -1,0 +1,10 @@
+
+http://vim.wikia.com/wiki/Converting_tabs_to_spaces
+
+
+To write Python code in VIM, use the following to make sure you use spaces not tabs. And how to fix a tab indented Python document to space use retab. 
+
+:set expandtab
+:set tabstop=4
+
+:retab

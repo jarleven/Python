@@ -26,11 +26,11 @@ class MyFirstGuiProgram(Ui_dials):
         a = self.dial_1.value()
         print("  Verdi A %d" % a)
 
-        a = self.dial_2.value()
-        print("  Verdi B %d" % a)
+        b = self.dial_2.value()
+        print("  Verdi B %d" % b)
 
-        a = self.dial_3.value()
-        print("  Verdi C %d" % a)
+        c = self.dial_3.value()
+        print("  Verdi C %d" % c)
 
 
 

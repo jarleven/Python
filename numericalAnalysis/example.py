@@ -9,29 +9,19 @@ import matplotlib.pyplot as plt
 
 
 torange = 5
-#startrange = 2
 fromrange = 1
+picture = 0
+
+graphpoints = 100
 increments = [1,2,4,10, 400]
 
 
-graphpoints = 100
-
-# Clear the Spyder console
-print("%clear")
-
 def f(x):
-  #return(sin(x))
-  return(x)
-  #return(2*x+5)
-  
+   return(x)
  
- 
-
-picture = 0
 
 for increment in increments:
 
-    picture = picture + 1
 
     # The datasets
     xlist=[]
@@ -56,6 +46,7 @@ for increment in increments:
     section = 1/increment
     
     areal = 0.0
+
     
     # Make the bars and sum up the area of these
     for step in range(fromrange,steps+1):
@@ -97,6 +88,7 @@ for increment in increments:
     plt.title("%d rektangel" % (increment*torange))
 
     # Save and print the picture
+    picture = picture + 1
     plt.savefig('foo%d.png' % picture)
     plt.show()
  

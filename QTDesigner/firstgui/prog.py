@@ -42,8 +42,6 @@ class MyFirstGuiProgram(Ui_myfirstgui):
             self.label.setText("Warning")
             image = QtGui.QImage(QtGui.QImageReader("image.png").read())
             self.label_2.setPixmap(QtGui.QPixmap(image))
-            #label.show()
-
 
         else:
              palette.setColor(palette.WindowText, QtGui.QColor(0, 255, 50))

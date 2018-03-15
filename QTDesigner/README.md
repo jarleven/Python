@@ -19,6 +19,9 @@
  * sudo apt-get install qtcreator
  * sudo apt install pyqt5-dev-tools
 
+## Or as one single line for copy paste
+ * sudo apt install python3-pip python3-pyqt5 qttools5-dev-tools qtcreator pyqt5-dev-tools
+
 
 Run this command to make the Python code from the designer .ui file : pyuic5 -x firstgui.ui -o firstgui.py
 

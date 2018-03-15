@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>170</width>
-    <height>238</height>
+    <width>378</width>
+    <height>297</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,8 +34,8 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>121</width>
-     <height>131</height>
+     <width>101</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="notchesVisible">
@@ -71,14 +71,27 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>150</y>
+     <x>30</x>
+     <y>120</y>
      <width>71</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
     <string>Normal</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>10</y>
+     <width>181</width>
+     <height>271</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Bilde</string>
    </property>
   </widget>
  </widget>

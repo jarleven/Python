@@ -40,6 +40,11 @@ class MyFirstGuiProgram(Ui_myfirstgui):
         if value > 50:
             palette.setColor(palette.WindowText, QtGui.QColor(255, 0, 0))
             self.label.setText("Warning")
+            image = QtGui.QImage(QtGui.QImageReader("image.png").read())
+            self.label_2.setPixmap(QtGui.QPixmap(image))
+            #label.show()
+
+
         else:
              palette.setColor(palette.WindowText, QtGui.QColor(0, 255, 50))
              self.label.setText("Normal")   

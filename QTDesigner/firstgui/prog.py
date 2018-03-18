@@ -1,13 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Feb 19 17:21:45 2018
-
-@author: Win10User
-
-
-C:\python>pyuic5 -x firstgui.ui -o firstgui.py
-
-"""
 
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets

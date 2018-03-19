@@ -18,20 +18,16 @@ if os.uname()[1] == 'raspberrypi':
 
 
     
-# GPIO.OUT
-# GPIO.IN
 def gpio_setup(pin,direction):
     print("Setting pin %d direction as %s" % (pin, direction))
 
     if rpi:
         if directio == "Out":
-            GPIO.setup(pin,direction)
+            GPIO.setup(pin,GPIO.OUT)
         else:
-            GPIO.setup(pin,direction)
+            GPIO.setup(pin,GPIO.IN)
 
 
-# GPIO.HIGH
-# GPIO.LOW
 def gpio_output(pin, level):
     print("Setting pin %d level as %d" % (pin, level))
 

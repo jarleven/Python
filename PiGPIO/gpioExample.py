@@ -4,6 +4,12 @@ import time
 
 rpi = False
 
+# The pin we blink on the Raspberry Pi
+GPIOPIN = 4
+OUTPUT = 0
+INPUT = 1
+
+
 if os.uname()[1] == 'raspberrypi':
     rpi = True
 
@@ -22,7 +28,7 @@ def gpio_setup(pin,direction):
     print("Setting pin %d direction as %s" % (pin, direction))
 
     if rpi:
-        if directio == "Out":
+        if directio == OUTPUT:
             GPIO.setup(pin,GPIO.OUT)
         else:
             GPIO.setup(pin,GPIO.IN)
@@ -39,11 +45,11 @@ def gpio_output(pin, level):
 
 
 # Setup pin direction
-gpio_setup(4, "Out")
+gpio_setup(GPIOPIN, OUTPUT)
 
 # Blink the pin
 while True:
-    gpio_output(4,True)
+    gpio_output(GPIOPIN,True)
     time.sleep(1)
-    gpio_output(4,False)
+    gpio_output(GPIOPIN,False)
     time.sleep(1)

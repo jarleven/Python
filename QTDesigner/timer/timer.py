@@ -20,9 +20,9 @@ class TimerExample(Ui_timer):
 
         a = 5000
         print("Fire the singleShot timer in %dms" % a)
-        
-        QtCore.QTimer.singleShot(a, self.stopSingleShot)
         self.label.setText("Wait %dms" % a)
+
+        QtCore.QTimer.singleShot(a, self.stopSingleShot)
 
 
 if __name__ == '__main__':

@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-
-pyuic5 -x dials.ui -o dials.py
-
-"""
 
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets

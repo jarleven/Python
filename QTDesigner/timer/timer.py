@@ -24,7 +24,7 @@ class TimerExample(Ui_timer):
         QtCore.QTimer.singleShot(a, self.stopCallback)
         self.label.setText("Wait %dms" % a)
 
-   
+
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     dialog = QtWidgets.QDialog()

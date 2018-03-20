@@ -39,11 +39,11 @@ def gpio_output(pin, level):
 
 
 # Setup pin direction
-gpio_setup(17, "Out")
+gpio_setup(4, "Out")
 
 # Blink the pin
 while True:
-    gpio_output(17,True)
+    gpio_output(4,True)
     time.sleep(1)
-    gpio_output(17,False)
+    gpio_output(4,False)
     time.sleep(1)

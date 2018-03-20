@@ -12,8 +12,8 @@ class TimerExample(Ui_timer):
         self.pushButton.clicked.connect(self.mixButton)
 
 
-    def stopCallback(self):
-        print("We got a timer callback!")
+    def stopSingleShot(self):
+        print("We got called by a timer event!")
         self.label.setText("Timer done !")
 
     def mixButton(self, value):
@@ -21,7 +21,7 @@ class TimerExample(Ui_timer):
         a = 5000
         print("Throw the timer callback in %dms" % a)
         
-        QtCore.QTimer.singleShot(a, self.stopCallback)
+        QtCore.QTimer.singleShot(a, self.stopSingleShot)
         self.label.setText("Wait %dms" % a)
 
 

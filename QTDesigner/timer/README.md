@@ -1,5 +1,5 @@
 
-
+# A QTimer example of a oneshot timer 
 
 ### Usage
  python3 timer.py 

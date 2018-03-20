@@ -9,14 +9,14 @@ class TimerExample(Ui_timer):
         Ui_timer.__init__(self)
         self.setupUi(dialog)
 
-        self.pushButton.clicked.connect(self.mixButton)
+        self.pushButton.clicked.connect(self.timerButton)
 
 
     def stopSingleShot(self):
         print("We got called by a timer event!")
         self.label.setText("Timer done !")
 
-    def mixButton(self, value):
+    def timerButton(self, value):
 
         a = 5000
         print("Fire the singleShot timer in %dms" % a)

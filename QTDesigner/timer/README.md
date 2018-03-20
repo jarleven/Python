@@ -7,3 +7,5 @@
 ### Regenerate the GUI if you edit the graphics
  pyuic5 -x GUItimer.ui -o GUItimer.py 
 
+
+![Alt text](Screenshot.png?raw=true "Screenshot")

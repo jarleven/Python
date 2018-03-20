@@ -19,7 +19,7 @@ class TimerExample(Ui_timer):
     def mixButton(self, value):
 
         a = 5000
-        print("Throw the timer callback in %dms" % a)
+        print("Fire the singleShot timer in %dms" % a)
         
         QtCore.QTimer.singleShot(a, self.stopSingleShot)
         self.label.setText("Wait %dms" % a)

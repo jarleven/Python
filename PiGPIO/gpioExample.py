@@ -4,8 +4,13 @@ import time
 
 rpi = False
 
-# The pin we blink on the Raspberry Pi
+# The pin we blink on the Raspberry Pi, and the delay in seconds
 GPIOPIN = 4
+BLLINKTIME = 1
+
+
+
+# For our wrapper, define directions
 OUTPUT = 0
 INPUT = 1
 
@@ -50,6 +55,6 @@ gpio_setup(GPIOPIN, OUTPUT)
 # Blink the pin
 while True:
     gpio_output(GPIOPIN,True)
-    time.sleep(1)
+    time.sleep(BLINKTIME)
     gpio_output(GPIOPIN,False)
-    time.sleep(1)
+    time.sleep(BLINKTIME)

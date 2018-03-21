@@ -7,3 +7,8 @@ The urx library (Need to recheck this) was automatically installed when it was i
 
 Go to the source for more information
 https://github.com/SintefRaufossManufacturing/python-urx
+
+
+Other examples use the UR10 API directly.
+
+

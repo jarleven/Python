@@ -1,3 +1,11 @@
+"""
+ pip3 install clarifai --upgrade
+ pip3 install Pillow
+
+ Most of the code is copied from :  https://github.com/Clarifai/clarifai-python
+
+"""
+
 from clarifai.rest import ClarifaiApp
 from clarifai.rest import Image as ClImage
 

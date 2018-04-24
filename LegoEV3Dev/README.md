@@ -27,8 +27,8 @@ Lytt til radio skriv inn følgande
 
 	mpg321 http://stream-sd1.radioparadise.com:80/mp3-32
 
-	mpg123 -m http://lyd.nrk.no/nrk_radio_p3_mp3_l
-	mpg123 -m http://lyd.nrk.no/nrk_radio_alltid_nyheter_mp3_l
+	mpg321 -m http://lyd.nrk.no/nrk_radio_p3_mp3_l
+	mpg321 -m http://lyd.nrk.no/nrk_radio_alltid_nyheter_mp3_l
 
 
 

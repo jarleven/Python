@@ -25,17 +25,36 @@ app = ClarifaiApp(api_key=MyKey)
 
 model = app.models.get('general-v1.3')
 
-MyFile='./index.jpeg'
+#MyFile='./index.jpeg'
+MyFile='./image3.jpg'
+
+extension = "*.jpg"
 
 #response = model.predict_by_url(url='https://samples.clarifai.com/metro-north.jpg')
-response = model.predict_by_filename(MyFile)
+
+import glob
+
+# file-output.py
+f = open('helloworld.txt','a')
 
 
-concepts = response['outputs'][0]['data']['concepts']
-for concept in concepts:
-    print(concept['name'], concept['value'])
-    if concept['name'] == 'fish':
-        print("                     Det er ein fisk %d%%" % ((concept['value'])*100) )
+for filename in glob.iglob('/home/tredea/Dropbox/Grabber-live/*.jpg'):
 
-Image.open(MyFile).show()
+    checkfile = '%s' % filename
+    print('%s' % checkfile)
+
+    response = model.predict_by_filename(checkfile)
+
+
+
+    concepts = response['outputs'][0]['data']['concepts']
+    for concept in concepts:
+        # print(concept['name'], concept['value'])
+        if concept['name'] == 'fish':
+            print("Det er ein fisk i %s sansynligheit %d%%" % (checkfile,  (concept['value'])*100) )
+            f.write("\n" + "Det er ein fisk i %s sansynligheit %d%%" % (checkfile,  (concept['value'])*100) )
+
+f.close()
+
+#Image.open(MyFile).show()
 

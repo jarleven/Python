@@ -1,0 +1,4 @@
+hello world
+Det er ein fisk i /home/tredea/Dropbox/Grabber-live/e_elva_take2_29610.jpg sansynligheit 88%
+Det er ein fisk i /home/tredea/Dropbox/Grabber-live/e_elva_take2_30239.jpg sansynligheit 91%
+Det er ein fisk i /home/tredea/Dropbox/Grabber-live/e_elva_take2_29512.jpg sansynligheit 87%

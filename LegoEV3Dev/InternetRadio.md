@@ -1,14 +1,15 @@
 # Internet Radio on the Lego EV3
 
 sudo apt-get update
+
 sudo apt-get upgrade 
 
 
 Installer ein MP3 spelar
 
-    sudo apt-get install mpg321
+Â Â  Â sudo apt-get install mpg321
 
-Lytt til radio skriv inn følgande
+Lytt til radio skriv inn fÃ¸lgande
 
 	mpg321 http://stream-sd1.radioparadise.com:80/mp3-32
 

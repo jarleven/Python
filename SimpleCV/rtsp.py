@@ -1,7 +1,11 @@
 """
-  Simple example of a connection to 
+    Simple example of a connection to 
 
-  IPC (720P) Motorized Zoom & Auto Focal LEN 1/3" Aptina AR0130 CMOS Hi3518C CCTV IP camera
+    IPC (720P) Motorized Zoom & Auto Focal LEN 1/3" Aptina AR0130 CMOS Hi3518C CCTV IP camera
+    Default IP 192.168.1.10
+
+    Sony IMX module
+    Default IP 192.168.1.88
 
 """
 

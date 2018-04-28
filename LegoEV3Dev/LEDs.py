@@ -26,4 +26,3 @@ while True:
     for color in colors:
         ev3.Leds.set_color(ev3.Leds.LEFT,  color)
         ev3.Leds.set_color(ev3.Leds.RIGHT, color)
-

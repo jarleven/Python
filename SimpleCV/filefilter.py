@@ -68,7 +68,7 @@ for folder in sorted(subfolders):
 
     # Make a histogram
     hist = cv2.calcHist([gray], [0], None, [histrange], [0, histrange])
-    #    
+    #
     # Do some math on the histogram
     # Compare bright side to the right with dark side on the left
     brightpixels = 0
@@ -87,7 +87,7 @@ for folder in sorted(subfolders):
         if (brightpixels > darkpixels):
             fdest = brightpath+"/"+filename
             shutil.copyfile(file, fdest)
-            #print(fdest)    
+            #print(fdest)
 
         else:
             fdest = darkpath+"/"+filename

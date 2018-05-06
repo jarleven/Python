@@ -13,5 +13,4 @@ import rpyc
 conn = rpyc.classic.connect('192.168.1.135')   # host name or IP address of the EV3
 ev3 = conn.modules['ev3dev.ev3']               # import ev3dev.ev3 remotely
 
-while True:
-    ev3.Sound.speak("Ulrik").wait()
+ev3.Sound.speak("Luke I'm your father").wait()

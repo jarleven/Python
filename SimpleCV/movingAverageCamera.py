@@ -33,9 +33,9 @@ args = vars(ap.parse_args())
 
 # if the video argument is None, then we are reading from webcam
 if args.get("video", None) is None:
-    #camera = cv2.VideoCapture(0)
+    camera = cv2.VideoCapture(0)
     
-    camera = cv2.VideoCapture("rtsp://192.168.1.10:554/user=admin&password=&channel=1&stream=0.sdp")
+    #camera = cv2.VideoCapture("rtsp://192.168.1.10:554/user=admin&password=&channel=1&stream=0.sdp")
     time.sleep(3)
     
     time.sleep(0.25)

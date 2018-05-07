@@ -20,5 +20,13 @@ Passord : maker
 
 
 
+robot@ev3dev:~$ connmanctl
+connmanctl> enable wifi
+connmanctl> scan wifi
+connmanctl> services
+connmanctl> agent on
+connmanctl> connect wifi_*****
+Passphrase? *************
+connmanctl> quit
 
 

@@ -41,6 +41,7 @@ if OSSystem == "Windows":
     savepath = os.path.join('C:\\','git','motion')
 else:
     path     = "/home/tredea/GrabberArchive"
+    #path     = "/home/tredea/Dropbox"
     savepath = "/home/tredea/motion"
 
 print(path)
@@ -51,7 +52,7 @@ print(OSSystem)
 countoursize = 700      # 600 uten blur
 TRESH_MIN = 20        # Var 25   40 uten blur
 TRESH_MAX = 255
-BLUR = False
+BLUR = True
 extension = "*.jpg"
 
 
@@ -93,14 +94,14 @@ for folder in sorted(subfolders, reverse=True):
     files = sorted(glob.glob(directory))
 
 
-    for file in files:
-        frame = cv2.imread(file, cv2.IMREAD_ANYCOLOR | cv2.IMREAD_ANYDEPTH)
-        avg1 = np.float32(frame)
-        avg2 = np.float32(frame)
 
-        avg3 = np.float32(frame)
+    file = files[0]
+    frame = cv2.imread(file, cv2.IMREAD_ANYCOLOR | cv2.IMREAD_ANYDEPTH)
+    avg1 = np.float32(frame)
+    avg2 = np.float32(frame)
+
+    avg3 = np.float32(frame)
      
-        break
     
     avgstart = 0    
     for file in files:
@@ -114,7 +115,6 @@ for folder in sorted(subfolders, reverse=True):
         if avgstart > 100:
             break
 
-    res3 = res2
     # Variables for detection
     pict = 0
     processed = 0
@@ -174,8 +174,7 @@ for folder in sorted(subfolders, reverse=True):
         # dilate the thresholded image to fill in holes, then find contours
         # on thresholded image
         thresh = cv2.dilate(thresh, None, iterations=2)
-        (_, cnts, _) = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
-         cv2.CHAIN_APPROX_SIMPLE)
+        (_, cnts, _) = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
 
         occupied = False
@@ -222,8 +221,10 @@ for folder in sorted(subfolders, reverse=True):
 
         
         if occupied and grayscale == False:
-            print("Found movement in : " + file)
             pict=pict+1
+
+            print("This is file # %d hit # %d Found movement in : %s" %(processed, pict, file))
+
   
             if save:
                 filephead, filetail = os.path.split(file)
@@ -237,7 +238,7 @@ for folder in sorted(subfolders, reverse=True):
             cv2.imshow("Thresh", thresh)
             cv2.imshow("Frame Delta",  frameDelta)
             #cv2.imshow("Frame Delta2", frameDelta2)
-            cv2.imshow("Frame Delta2", res3)
+            #cv2.imshow("Frame Delta2", res3)
 
 
             #cv2.imshow('avg1',res1)

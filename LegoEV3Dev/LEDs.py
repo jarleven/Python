@@ -13,7 +13,7 @@ import rpyc
 conn = rpyc.classic.connect('192.168.1.135')   # host name or IP address of the EV3
 ev3 = conn.modules['ev3dev.ev3']               # import ev3dev.ev3 remotely
 
-# In the simple form we can set the left LED with yelloe color.
+# In the simple form we can set the left LED with yellow color.
 ev3.Leds.set_color(ev3.Leds.LEFT,  ev3.Leds.YELLOW)
 
 

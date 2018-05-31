@@ -18,6 +18,8 @@ Login : robot
 Passord : maker
 
 
+Start RPyC server on Ev3 Brick
+Run the pyc_classic.py
 
 
 robot@ev3dev:~$ connmanctl

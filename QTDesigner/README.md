@@ -1,7 +1,7 @@
 	Some Python GUI examples with Qt Designer (Qt Creator)
 
 
-##  Cheat Sheet Ubuntu 17.10
+##  Cheat Sheet Ubuntu 17.10 ( Testing with 18.04 )
 
 ### Python 3
 
@@ -20,7 +20,7 @@
  * sudo apt install pyqt5-dev-tools
 
 ## Or as one single line for copy paste
- * sudo apt install python3-pip python3-pyqt5 qttools5-dev-tools qtcreator pyqt5-dev-tools
+ * sudo apt install git python3-pip python3-pyqt5 qttools5-dev-tools qtcreator pyqt5-dev-tools
 
 
 Run this command to make the Python code from the designer .ui file : pyuic5 -x firstgui.ui -o firstgui.py

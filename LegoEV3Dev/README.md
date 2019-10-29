@@ -28,3 +28,9 @@ Passphrase? *************
 connmanctl> quit
 ```
 
+
+### ABC
+* Download image file snapshot-ev3dev-buster-ev3-generic-2019-09-08.img.xz
+* Brurn the image directly to an SD-Card using Balena Etcher  https://www.balena.io/etcher/
+* Plug the SD-Card in your Ev3 brick
+* Magic :-)

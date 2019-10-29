@@ -1,3 +1,5 @@
+## A collection of what I have done on the Lego Ev3 using Ev3dev 
+This is a simplified colection of things to try using Linux on an Ev3 in the classroom
 
 * http://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/stable/rpyc.html
 * https://sites.google.com/site/ev3python/learn_ev3_python

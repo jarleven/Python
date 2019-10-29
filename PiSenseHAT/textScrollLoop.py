@@ -17,4 +17,4 @@ while True:
     sense.show_message("Hallo Verden!!", text_colour=green)
 
     sense.set_rotation(270)
-    sense.show_message("Valfag", text_colour=blue
+    sense.show_message("10. KL Hospitering", text_colour=blue)

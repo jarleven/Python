@@ -11,10 +11,8 @@ import RPi.GPIO as GPIO # import our GPIO library
 # Define our stuff
 #
 
-# The pin we blink on the Raspberry Pi, and the delay in seconds
-GPIOPIN = 4
-# Time in seconds for LED states
-BLINKTIME = 1
+GPIOPIN = 4   # The pin we blink on the Raspberry Pi
+BLINKTIME = 1 # Time in seconds for LED states
 
 
 #
@@ -27,11 +25,9 @@ GPIO.setup(GPIOPIN,GPIO.OUT)
 #GPIO.setup(pin,GPIO.IN)
 
 
-
-# Blink the pin
 print("Pi light'em up!")
 
-# Just go roundabout here blinking the LEDs
+# Forever go roundabout here blinking the LED
 while True:
     GPIO.output(pin,GPIO.HIGH)
     time.sleep(BLINKTIME)

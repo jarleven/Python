@@ -46,10 +46,9 @@ BLINKTIME = 1 # Time in seconds for LED states
 # Code 
 #
 
-GPIO.setmode(GPIO.BCM) # set the board numbering system to BCM
+GPIO.setmode(GPIO.BCM) # set the board numbering system to BCM That is GPIOxx as in the figure above
 
 GPIO.setup(GPIOPIN,GPIO.OUT)
-#GPIO.setup(pin,GPIO.IN)
 
 
 print("Pi light'em up!")

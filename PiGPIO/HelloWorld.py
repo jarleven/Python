@@ -57,12 +57,15 @@ GPIO.setmode(GPIO.BCM) # set the board numbering system to BCM That is GPIOxx as
 
 GPIO.setup(MYLEDPIN,GPIO.OUT)
 
-
-print("Pi light'em up!")
-
-# Forever go roundabout here blinking the LED
-while True:
-    GPIO.output(MYLEDPIN,GPIO.HIGH)
-    time.sleep(BLINKTIME)
-    GPIO.output(MYLEDPIN,GPIO.LOW)
-    time.sleep(BLINKTIME)
+print("Pi light'em up! Press Ctrl+C to exit")
+try:
+    # Forever go roundabout here blinking the LED
+    while True:
+        GPIO.output(MYLEDPIN,GPIO.HIGH)
+        time.sleep(BLINKTIME)
+        GPIO.output(MYLEDPIN,GPIO.LOW)
+        time.sleep(BLINKTIME)
+  
+except KeyboardInterrupt:
+    print("Someone pressed Ctrl+C, goodbye!")
+    GPIO.cleanup()

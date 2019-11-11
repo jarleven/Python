@@ -1,5 +1,12 @@
 # As simple as it gets
 
+# Log in to your Pi
+# Download this file and execute it with the following commands.
+# wget https://raw.githubusercontent.com/jarleven/Python/master/PiGPIO/HelloWorld.py
+# python3 HelloWorld.py
+#
+#
+
 #
 # Import Libraries
 #
@@ -11,8 +18,8 @@ import RPi.GPIO as GPIO # import our GPIO library
 # Define our stuff
 #
 
-GPIOPIN = 4   # The pin we blink on the Raspberry Pi GPIO4 / Pin7
-BLINKTIME = 1 # Time in seconds for LED states
+MYLEDPIN = 4   # The pin we blink on the Raspberry Pi GPIO4 / Pin7
+BLINKTIME = 1  # Time in seconds for LED states
 
 #            https://github.com/tvierb/raspberry-ascii
 #
@@ -48,14 +55,14 @@ BLINKTIME = 1 # Time in seconds for LED states
 
 GPIO.setmode(GPIO.BCM) # set the board numbering system to BCM That is GPIOxx as in the figure above
 
-GPIO.setup(GPIOPIN,GPIO.OUT)
+GPIO.setup(MYLEDPIN,GPIO.OUT)
 
 
 print("Pi light'em up!")
 
 # Forever go roundabout here blinking the LED
 while True:
-    GPIO.output(pin,GPIO.HIGH)
+    GPIO.output(MYLEDPIN,GPIO.HIGH)
     time.sleep(BLINKTIME)
-    GPIO.output(pin,GPIO.LOW)
+    GPIO.output(MYLEDPIN,GPIO.LOW)
     time.sleep(BLINKTIME)

@@ -61,11 +61,12 @@ print("Pi light'em up! Press Ctrl+C to exit")
 try:
     # Forever go roundabout here blinking the LED
     while True:
+        print("Blink ---___")
         GPIO.output(MYLEDPIN,GPIO.HIGH)
         time.sleep(BLINKTIME)
         GPIO.output(MYLEDPIN,GPIO.LOW)
         time.sleep(BLINKTIME)
-  
+          
 except KeyboardInterrupt:
     print("Someone pressed Ctrl+C, goodbye!")
     GPIO.cleanup()

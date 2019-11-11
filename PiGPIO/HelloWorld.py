@@ -3,10 +3,6 @@
 # Log in to your Pi
 # Download this file and execute it with the following commands.
 #
-# sudo apt-get update
-# sudo apt-get install python3-pip
-# pip3 install RPi.GPIO
-#
 # wget https://raw.githubusercontent.com/jarleven/Python/master/PiGPIO/HelloWorld.py
 # python3 HelloWorld.py
 #

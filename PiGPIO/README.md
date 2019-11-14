@@ -13,3 +13,10 @@ Open a terminal
 wget https://raw.githubusercontent.com/jarleven/Python/master/PiGPIO/HelloWorld.py
 python3 HelloWorld.py
 ```
+
+
+### Resources
+
+```
+  * https://wiki.up-community.org/RPi.GPIO
+```

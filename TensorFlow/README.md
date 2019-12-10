@@ -38,6 +38,12 @@ python3 classify_image.py
 
 ```
 
+Download an image
+```
+wget https://i.dailymail.co.uk/1s/2019/11/23/09/21370544-7717313-image-a-1_1574501083030.jpg -O test.jpg
+```
+
+
 Output is 
 ```
 >> Downloading inception-2015-12-05.tgz 100.0%

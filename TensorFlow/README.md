@@ -41,6 +41,10 @@ python3 classify_image.py --image_file ~/test.jpg ~/test.jpg
 
 ```
 
+Resource
+```
+https://www.tensorflow.org/install/pip
+```
 
 
 
@@ -76,7 +80,6 @@ python3 -m pip install --upgrade --force-reinstall tensorflow --user
 ```
 
 
-https://www.tensorflow.org/install/pip
 
 ## Docker
 

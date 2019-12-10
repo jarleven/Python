@@ -1,6 +1,6 @@
 ##  Ubuntu 18.04.3 LTS
 * Trying to make a simple description for some students
-* Date 25. Oct 2019
+* Date 11. Des 2019
 
 ```
 Download : http://releases.ubuntu.com/18.04/ubuntu-18.04.3-desktop-amd64.iso
@@ -9,11 +9,9 @@ Tensorflow versions are here : https://www.tensorflow.org/versions/
 # Norwegian keyboard map
 setxkbmap no
 
-# Set path (Need to test again when to do this. Does this path exist after installing Ubuntu ?)
-export PATH=$PATH:~/.local/bin
-
-# Add it permanently
-# echo "export PATH=$PATH:~/.local/bin" >> ~/.bash_profile
+# Set path and update
+echo "export PATH=$PATH:~/.local/bin" >> ~/.bash_profile
+source ~/.bash_profile
 
 # Install 
 sudo apt install -y git
@@ -21,11 +19,9 @@ sudo apt install -y python3-pip
 
 python3 -m pip install --upgrade --user pip 
 
-# Some dependency issue, this is not installed by Tensorflow 
-python3 -m pip install --upgrade --force-reinstall --user six
 
-python3 -m pip install --upgrade --force-reinstall tensorflow==1.10 --user
-# Edit At the time 1.15 is the lastest. Will test with this version.
+python3 -m pip install --upgrade --force-reinstall tensorflow==1.15 --user
+# Edit At the time 1.15 is the lastest / final 1.x version.
 
 # Get the "Models and examples built with TensorFlow"
 cd ~
@@ -36,13 +32,28 @@ cd ~/models/tutorials/image/imagenet
 python3 classify_image.py
 
 
+
+# Download some random image
+wget https://i.dailymail.co.uk/1s/2019/11/23/09/21370544-7717313-image-a-1_1574501083030.jpg -O ~/test.jpg
+
+# Calssify this image
+python3 classify_image.py --image_file ~/test.jpg ~/test.jpg
+
 ```
 
-Download an image
-```
-wget https://i.dailymail.co.uk/1s/2019/11/23/09/21370544-7717313-image-a-1_1574501083030.jpg -O test.jpg
-```
 
+
+
+Info about Python and PIP versions
+```
+python3 --version
+Python 3.6.9
+
+python3 -m pip --version
+pip 19.3.1 from /home/jarleven/.local/lib/python3.6/site-packages/pip (python 3.6)
+
+
+```
 
 Output is 
 ```
@@ -58,30 +69,14 @@ custard apple (score = 0.00147)
 earthstar (score = 0.00117)
 ```
 
-To classify your image use this style
-```
-python classify_image.py --NameOfYourImage.jpg
-```
-
-Info about Python and PIP versions
-```
-
-python --version
-Python 2.7.15+
-
-python3 -m pip --version
-pip 19.3.1 from /home/jarleven/.local/lib/python3.6/site-packages/pip (python 3.6)
-
-
-```
-
-
 
  Version 2 not supported. If you don't specify a version as above you get v2 of Tensorflow!
 ```
 python3 -m pip install --upgrade --force-reinstall tensorflow --user
 ```
 
+
+https://www.tensorflow.org/install/pip
 
 ## Docker
 

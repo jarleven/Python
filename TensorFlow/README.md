@@ -80,6 +80,10 @@ python3 -m pip install --upgrade --force-reinstall tensorflow --user
 ```
 
 
+## 
+ eog --fullscreen ~/flower_photos/sunflowers/3334350831_f8755a2095_n.jpg
+
+
 
 ## Docker
 

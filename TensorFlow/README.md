@@ -37,7 +37,7 @@ python3 classify_image.py
 wget https://i.dailymail.co.uk/1s/2019/11/23/09/21370544-7717313-image-a-1_1574501083030.jpg -O ~/test.jpg
 
 # Calssify this image
-python3 classify_image.py --image_file ~/test.jpg ~/test.jpg
+python3 classify_image.py --image_file ~/test.jpg
 
 ```
 

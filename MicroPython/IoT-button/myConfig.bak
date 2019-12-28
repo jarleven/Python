@@ -1,0 +1,29 @@
+
+module = { "ff:ff:ff:ff:ff:ff": [1,  2, 3, 4],
+           "ca:fe:ba:be:00:42": [1,  1, 1, 1],
+           "de:da:be:ef:42:42": [9, 10,11,12]
+         }
+
+
+AP= "MyAP"
+KEY="MyNetworkKey"
+
+HOST="192.168.1.1"
+PORT= 54130
+
+pins = [0, 5, 12, 13]
+
+LEDPIN = 2
+
+# PIN 14 is flaky. Maybe some features are tied to this pin.
+# PIN 16 has no internal PULLUP !!
+
+# Hardware pins used on the ESP8266
+
+#  GPIO  0 = D3 is the FLASH pushbutton on the LoLin module, push/active low
+#  GPIO  2 = D4 is the internal LED for the ESP-12 module, This LED is active low
+#  GPIO  5 = D1
+#  GPIO 12 = D6
+#  GPIO 13 = D7
+
+

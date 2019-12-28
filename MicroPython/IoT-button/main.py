@@ -18,14 +18,16 @@ IGNORETIME=100
 
 pins=myConfig.pins
 led=myConfig.LEDPIN
-
 HOST, PORT=(myConfig.HOST, myConfig.PORT)
+module=myConfig.module
 
+# The MAC address of the module, human readable
 espmac = ubinascii.hexlify(network.WLAN().config('mac'),':').decode()   
 
-if espmac in myConfig.module:
+# Define the value of the pushbuttons from the physical MAC address
+if espmac in module:
     print("Found MAC %s" % espmac)
-    lamp = myConfig.module[espmac]
+    lamp = module[espmac]
 else:
     print("Unknown device MAC %s" % espmac)
     lamp = [10, 6, 7, 8]
@@ -182,8 +184,7 @@ while True:
                 for a in range(1, 4):
                     print("ID %d  state %d" % (a, SendState[a]))              
                     enable_btirq(a)
-                    boot.startWebrepl()
-
+                    
 
             else:
 

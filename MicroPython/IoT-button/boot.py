@@ -5,17 +5,12 @@ import time
 from machine import WDT
 
 
-time.sleep(1)
+wdt = WDT()  # enable watchdog timer
 print("")
 print("Booting...")
 
 sta_if = network.WLAN(network.STA_IF)
 ap_if = network.WLAN(network.AP_IF)
-
-
-def startWebrepl():
-    import webrepl
-    webrepl.start()
 
 
 def do_connect():
@@ -33,7 +28,7 @@ def do_connect():
 print('disable AP')
 ap_if.active(False)
 
-wdt = WDT()  # enable watchdog timer
+
 wdt.feed()
 do_connect()
 wdt.feed()

@@ -47,6 +47,7 @@ button = [None] * 4
 tim = [None] *4
 SendState = [None] *4
 
+# TODO make a class : https://docs.micropython.org/en/latest/reference/isr_rules.html
 
 def isr_one(p):
     isr_common(0)

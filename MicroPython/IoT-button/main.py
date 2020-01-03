@@ -5,6 +5,7 @@ from machine import reset
 import socket
 import boot
 import ubinascii
+import gc
 
 #from uptime import uptime
 import utime
@@ -15,6 +16,7 @@ PRELLTIME=100
 POLLTIME=100
 IGNORETIME=100
 
+print("Free memory %d " % gc.mem_free()) 
 
 pins=myConfig.pins
 led=myConfig.LEDPIN
@@ -145,6 +147,9 @@ for idx in range(4):
     enable_btirq(idx)
     print("Enabling button %d" % idx)
 
+print("Free memory %d " % gc.mem_free()) 
+print("Startring main")
+gc.collect()
 
 # Loop
 while True:
@@ -157,11 +162,6 @@ while True:
     else:
         onboardLED.on()
         
-
-    if( utime.ticks_ms() > 1000 * 60 * 60 * 24 ):
-        print("Reboot now")
-        reset()
-
 
     for idx in range(4):
         if SendState[idx] == 1:
@@ -181,9 +181,17 @@ while True:
             tim[idx].init(period=POLLTIME, mode=Timer.ONE_SHOT, callback=timer_cb[idx])
 
             if(idx==0):
+                print("-------DEBUG-------")
                 for a in range(1, 4):
-                    print("ID %d  state %d" % (a, SendState[a]))              
+                    print("  ID %d  state %d" % (a, SendState[a]))
+                                
                     enable_btirq(a)
+                print("  Free memory %d " % gc.mem_free()) 
+                gc.collect()
+                print("  Free memory %d " % gc.mem_free()) 
+
+                print("  Uptime %d seconds" % (utime.ticks_ms()/1000))
+                print("       DEBUG")
                     
 
             else:

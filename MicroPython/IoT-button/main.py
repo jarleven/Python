@@ -16,6 +16,93 @@ PRELLTIME=100
 POLLTIME=100
 IGNORETIME=100
 
+
+# Send the data over the network
+def sendData(netData):
+    print("Sending data: ")
+    print(netData)
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.connect((HOST, PORT))
+    sock.sendall(netData + "\n\n")
+    received = sock.recv(1024)
+    sock.close()
+
+    print("Got data echo: ")
+    print(received)
+
+
+
+
+class Pushbutton(object):
+
+    def __init__(self, idx, pin):
+        self.idx=idx
+        self.pin=pin
+        self.state = 0
+
+
+        self.button = Pin(self.pin, Pin.IN, Pin.PULL_UP)        
+        self.button.irq(trigger=Pin.IRQ_FALLING, handler=self.isr_cb)
+        
+
+        self.enirq()
+        self.timer = Timer(-1)
+
+
+    def get_state(self):
+        return(self.state)
+
+    
+    def timer_cb(self, tim):
+
+        if self.state == 1:
+            if self.button.value():
+                self.state = 0
+                self.enirq()
+                print("Ignored glitch press %d, waiting for new user input" % self.idx)
+            else:
+                self.timer.init(period=IGNORETIME, mode=Timer.ONE_SHOT, callback=self.timer_cb)
+                self.state = 2
+
+        if self.state == 2:
+             if self.button.value():
+                print("Captured button press %d" % self.idx)
+                self.state = 3
+
+             else:
+                self.timer.init(period=IGNORETIME, mode=Timer.ONE_SHOT, callback=self.timer_cb)
+                print("Button not released %d" % self.idx)
+
+
+    def isr_cb(self, isr):
+        print("cb")
+        self.disirq()
+        self.state=1
+        self.timer.init(period=IGNORETIME, mode=Timer.ONE_SHOT, callback=self.timer_cb)
+
+ 
+    def enirq(self):
+        self.state=0
+        print("Enable IRQ %d" % self.idx)
+        self.button.irq(trigger=Pin.IRQ_FALLING, handler=self.isr_cb)
+        self.button = Pin(self.pin, Pin.IN, Pin.PULL_UP)
+
+    # For the ESP8266 there is some chaos regarding the pin interrupt handling
+    # Quote Mar 17, 2018 "p.irq(trigger=0,handler=callback) seems to properly disable the interruptions."
+    # https://github.com/micropython/micropython/issues/2847
+    def disirq(self):
+        print("Disable IRQ %d" % self.idx)
+        self.button.irq(trigger=0, handler=self.isr_cb)
+
+    # TODO is this needed ??
+    def __iter__(self):
+        pass
+
+
+
+
+
+
 print("Free memory %d " % gc.mem_free()) 
 
 pins=myConfig.pins
@@ -43,110 +130,14 @@ onboardLED.off()
 
 
 
-button = [None] * 4
-tim = [None] *4
-SendState = [None] *4
 
-# TODO make a class : https://docs.micropython.org/en/latest/reference/isr_rules.html
-
-def isr_one(p):
-    isr_common(0)
-
-def isr_two(p):
-    isr_common(1)
-
-def isr_three(p):
-    isr_common(2)
-
-def isr_four(p):
-    isr_common(3)
-
-
-def timer_cb_one(t):
-    timer_cb_common(0)
-
-def timer_cb_two(t):
-    timer_cb_common(1)
-
-def timer_cb_three(t):
-    timer_cb_common(2)
-
-def timer_cb_four(t):
-    timer_cb_common(3)
-
-
-isr_func = [isr_one, isr_two, isr_three, isr_four]
-timer_cb = [timer_cb_one,timer_cb_two,timer_cb_three, timer_cb_four]
+buttons = []
+ 
+for i in range(4):
+    buttons.append(Pushbutton(i, pins[i]))
 
 
 
-for idx in range(4):
-    SendState[idx] = 0 # 0 idle, 1 ISR, 2 Steadey
-    button[idx] = Pin(pins[idx], Pin.IN, Pin.PULL_UP)
-    tim[idx] = Timer(-1)
-
-
-
-# For the ESP8266 there is some chaos regarding the pin interrupt handling
-# Quote Mar 17, 2018 "p.irq(trigger=0,handler=callback) seems to properly disable the interruptions."
-# https://github.com/micropython/micropython/issues/2847
-
-def enable_btirq(idx):
-    button[idx].irq(trigger=Pin.IRQ_FALLING, handler=isr_func[idx])
-    button[idx] = Pin(pins[idx], Pin.IN, Pin.PULL_UP)
-
-def disable_btirq(idx):
-    button[idx].irq(trigger=0, handler=isr_func[idx])
-
-
-
-def isr_common(idx):
-    global SendState              # To modify a global variable we need to state it's name
-    SendState[idx] = 1
-    disable_btirq(idx)
-      
-
-def timer_cb_common(idx):
-
-    if SendState[idx] == 2:
-        if button[idx].value():
-            SendState[idx] = 0
-            enable_btirq(idx)
-            print("Ignored glitch press %d, waiting for new user input" % idx)
-        else:
-            print("Captured button press %d" % idx)
-            SendState[idx] = 3
-
-    else:
-
-        if not button[idx].value():
-            tim[idx].init(period=PRELLTIME, mode=Timer.ONE_SHOT, callback=timer_cb[idx])
-            print("Button %d not released" % idx)
-        else:
-            enable_btirq(idx)
-            print("Ready button %d, waiting for new user input" % idx)
-
-
-# Send the data over the network
-def sendData(netData):
-    print("Sending data: ")
-    print(netData)
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.connect((HOST, PORT))
-    sock.sendall(netData + "\n\n")
-    received = sock.recv(1024)
-    sock.close()
-
-    print("Got data echo: ")
-    print(received)
-
-
-
-
-# Register interrup pin
-for idx in range(4):
-    enable_btirq(idx)
-    print("Enabling button %d" % idx)
 
 print("Free memory %d " % gc.mem_free()) 
 print("Startring main")
@@ -162,45 +153,19 @@ while True:
         onboardLED.off()
     else:
         onboardLED.on()
-        
 
-    for idx in range(4):
-        if SendState[idx] == 1:
-            # Clear the new event flag set in the interrupt
-            print("Trigger, wait a bit")
-            SendState[idx] = 2
+    for button in buttons:
+        if button.get_state() == 3:
+            button.enirq()
+            print("Button %d say hello" % button.idx)
+
+            lampID=lamp[button.idx]
+            netData = "binary LED%d toggle" % lampID
+
+            sendData(netData)
+            print("Action on LED%d" % lampID)
 
 
-            # We have an event and the interrupt was disabled. Enable the interruptagain with the timer
-            # This is our debounce
-            tim[idx].init(period=IGNORETIME, mode=Timer.ONE_SHOT, callback=timer_cb[idx])
-            # Timer example from https://www.dfrobot.com/blog-606.html
 
-        if SendState[idx] == 3:
-
-            SendState[idx] = 0
-            tim[idx].init(period=POLLTIME, mode=Timer.ONE_SHOT, callback=timer_cb[idx])
-
-            if(idx==0):
-                print("-------DEBUG-------")
-                for a in range(1, 4):
-                    print("  ID %d  state %d" % (a, SendState[a]))
-                                
-                    enable_btirq(a)
-                print("  Free memory %d " % gc.mem_free()) 
-                gc.collect()
-                print("  Free memory %d " % gc.mem_free()) 
-
-                print("  Uptime %d seconds" % (utime.ticks_ms()/1000))
-                print("       DEBUG")
-                    
-
-            else:
-
-                netValue = lamp[idx]
-                netData = "binary LED%d toggle" % (netValue)
-
-                sendData(netData)
-                print("Action on LED%d" % lamp[idx])
 
 

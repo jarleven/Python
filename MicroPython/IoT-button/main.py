@@ -31,6 +31,23 @@ def sendData(netData):
     print(received)
 
 
+def system_debug():
+
+    print("-------DEBUG-------")
+
+    print("  Free memory before gc.collect() %d " % gc.mem_free())
+    gc.collect()
+    print("  Free memory after gc.collect()  %d " % gc.mem_free())
+
+    # MorganTimney  from https://stackoverflow.com/questions/4048651/python-function-to-convert-seconds-into-minutes-hours-and-days/37194105
+    print("  Uptime %d seconds" % (utime.ticks_ms()/1000))
+    days = divmod(utime.ticks_ms()/1000, 86400)
+    # days[0] = whole days and
+    # days[1] = seconds remaining after those days
+    hours = divmod(days[1], 3600)
+    minutes = divmod(hours[1], 60)
+    print("  %i days, %i hours, %i minutes, %i seconds" % (days[0], hours[0], minutes[0], minutes[1]))
+    print("-------DEBUG-------")
 
 
 class Pushbutton(object):
@@ -129,14 +146,10 @@ onboardLED = Pin(led, Pin.OUT)
 onboardLED.off()
 
 
-
-
 buttons = []
  
 for i in range(4):
     buttons.append(Pushbutton(i, pins[i]))
-
-
 
 
 print("Free memory %d " % gc.mem_free()) 
@@ -159,13 +172,14 @@ while True:
             button.enirq()
             print("Button %d say hello" % button.idx)
 
-            lampID=lamp[button.idx]
-            netData = "binary LED%d toggle" % lampID
+            if button.idx == 0:
+                system_debug()
+            else:
 
-            sendData(netData)
-            print("Action on LED%d" % lampID)
+                lampID=lamp[button.idx]
+                netData = "binary LED%d toggle" % lampID
 
-
-
+                sendData(netData)
+                print("Action on LED%d" % lampID)
 
 

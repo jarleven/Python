@@ -7,6 +7,10 @@ import boot
 import ubinascii
 import gc
 
+from machine import I2C
+import sh1106
+import framebuf
+
 #from uptime import uptime
 import utime
 import time
@@ -152,9 +156,58 @@ for i in range(4):
     buttons.append(Pushbutton(i, pins[i]))
 
 
+# Orange SDA  D5   GPIO14  BUTTON4 on v1 (remove capacitors)
+# Gul    SCL  D0   GPIO16  TP2 on v1
+i2c = I2C(scl=Pin(16), sda=Pin(14))
+
+
+print('Scan i2c bus...')
+devices = i2c.scan()
+
+lcdpresent=False
+
+if len(devices) == 0:
+  print("No i2c device !")
+else:
+  print('i2c devices found:',len(devices))
+
+  for device in devices:  
+    print("Decimal address: ",device," | Hexa address: ",hex(device))
+    if device == 0x3c:
+        print("LCD found")
+        lcdpresent=True        
+
+if lcdpresent:
+    display = sh1106.SH1106_I2C(128, 64, i2c, None, 0x3c)
+    display.sleep(False)
+    display.fill(0)
+    #display.text('Testing 2', 0, 0, 1)
+    display.text(sta_if.ifconfig()[0], 0, 0, 1)
+
+    display.show()
+
+    time.sleep(1)
+    wdt.feed()
+    time.sleep(1)
+    wdt.feed()
+
+
+    with open('scatman.pbm', 'rb') as f:
+        f.readline() # Magic number
+        f.readline() # Creator comment
+        f.readline() # Dimensions
+        data = bytearray(f.read())
+    fbuf = framebuf.FrameBuffer(data, 128, 64, framebuf.MONO_HLSB)
+
+    display.invert(1)
+    display.blit(fbuf, 0, 0)
+    display.show()
+
+
 print("Free memory %d " % gc.mem_free()) 
 print("Startring main")
 gc.collect()
+
 
 # Loop
 while True:

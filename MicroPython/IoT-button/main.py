@@ -2,7 +2,6 @@
 from machine import Pin
 from machine import Timer
 from machine import reset
-import socket
 import boot
 import ubinascii
 import gc
@@ -15,6 +14,7 @@ import framebuf
 import utime
 import time
 
+import socket
 
 PRELLTIME=100
 POLLTIME=100
@@ -192,16 +192,20 @@ if lcdpresent:
     wdt.feed()
 
 
-    with open('scatman.pbm', 'rb') as f:
-        f.readline() # Magic number
-        f.readline() # Creator comment
-        f.readline() # Dimensions
-        data = bytearray(f.read())
-    fbuf = framebuf.FrameBuffer(data, 128, 64, framebuf.MONO_HLSB)
+    #with open('scatman.pbm', 'rb') as f:
+    #    f.readline() # Magic number
+    #    f.readline() # Creator comment
+    #    f.readline() # Dimensions
+    #    data = bytearray(f.read())
+    #fbuf = framebuf.FrameBuffer(data, 128, 64, framebuf.MONO_HLSB)
+    #
+    #display.invert(1)
+    #display.blit(fbuf, 0, 0)
+    #display.show()
 
-    display.invert(1)
-    display.blit(fbuf, 0, 0)
-    display.show()
+
+
+
 
 
 print("Free memory %d " % gc.mem_free()) 
@@ -209,10 +213,59 @@ print("Startring main")
 gc.collect()
 
 
+ServSock = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+listen_addr = ("",21567)
+ServSock.setblocking(0)
+ServSock.bind(listen_addr)
+
+
 # Loop
+counter=0
+beat=0
 while True:
 
+    try:
+        data,addr = ServSock.recvfrom(1024)
+        if data:
+            #print(data.strip(),addr)
+            #
+            # The images here : https://www.twobitarcade.net/article/displaying-images-oled-displays/
+            # Can now be transferred with netcat
+            # cat scatman.1.bin | nc -u 192.168.2.228 21567 -w 0 
+            #
+            image = bytearray(data.strip()) 
+
+            fbuf = framebuf.FrameBuffer(image, 128, 64, framebuf.MONO_HLSB)
+
+            display.fill(0)
+            display.blit(fbuf, 0, 0)
+            display.show()
+
+
+
+
+#        print(data.strip(),addr)
+#        display.fill(0)
+#        display.text(data.strip(), 0, 0, 1)
+#        display.show()
+
+    except:
+        pass
+
     wdt.feed()
+    if(counter>10000):
+        counter=0
+        beat=beat+1
+        print("It's alive %05d" % beat)
+        #display.text("It's alive %05d" % beat, 0, 10, 1)
+        #display.show()
+
+    counter = counter + 1
+
+    #line, _ = sock.recvfrom(180)
+
+    #if len(line) > 0:
+    #    print("UDP data %s" % line)
 
 
     if(boot.sta_if.isconnected()):

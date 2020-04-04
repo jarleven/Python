@@ -155,7 +155,7 @@ buttons = []
 for i in range(4):
     buttons.append(Pushbutton(i, pins[i]))
 
-
+# TODO condider GPIO9 and GPIO10 as they are available on the Button PCB
 # Orange SDA  D5   GPIO14  BUTTON4 on v1 (remove capacitors)
 # Gul    SCL  D0   GPIO16  TP2 on v1
 i2c = I2C(scl=Pin(16), sda=Pin(14))
@@ -213,9 +213,11 @@ print("Startring main")
 gc.collect()
 
 
+# IF LCD PRESENT, If not no need for this.
+# Multicast ?? What about a small speaker ? and a michrophone ?
 ServSock = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 listen_addr = ("",21567)
-ServSock.setblocking(0)
+ServSock.setblocking(0)		# We run the socket in the loop, if we don't do this calling socket.recvfrom() the call will block until data is recived, effectivley blocking the loop. (And yes a callback would be better !)
 ServSock.bind(listen_addr)
 
 
@@ -224,6 +226,7 @@ counter=0
 beat=0
 while True:
 
+    # If LCD present
     try:
         data,addr = ServSock.recvfrom(1024)
         if data:

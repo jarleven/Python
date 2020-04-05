@@ -2,11 +2,13 @@
 
 fn=""
 ip=""
+ng=""
 
 while [ $# -gt 0 ] ; do
   case $1 in
     --file) fn="$2" ;;
     --host) ip="$2" ;;
+    --negate) ng="$2" ;;
   esac
   shift
 done
@@ -25,6 +27,19 @@ then
 fi
 
 
+if [ -z "$ng" ]
+then
+        echo "No invert"
+        negate=""
+else
+	echo "Invert image"
+	negate="-negate"
+fi
+
+echo "Negate var ["$negate"]"
+
+
+
 echo "LCD prepare $fn and sending it to $ip"
 
 base=${fn%%.*}
@@ -32,10 +47,9 @@ base=${fn%%.*}
 echo $base
 
 
-
 convert $fn -resize 128x64^ -gravity Center -extent 128x64 "small"$base".jpg"
 
-convert "small"$base".jpg" -size 128x64 -type bilevel -depth 1 -negate "small"$base".pbm"
+convert "small"$base".jpg" -size 128x64 -type bilevel -depth 1 $negate "small"$base".pbm"
 
 convert "small"$base".pbm" "small"$base".pnm"
 

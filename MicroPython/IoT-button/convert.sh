@@ -1,5 +1,9 @@
 #!/bin/bash
 
+
+# sudo apt install imagemagick
+
+
 fn=""
 ip=""
 ng=""
@@ -58,7 +62,7 @@ convert $output".pbm" $output".pnm"
 # This does not work !
 convert $output".pbm" $output".mono"
 
-python pnm2bin.py $output".pnm"
+python3 pnm2bin.py $output".pnm"
 
 #cat "small"$base".mono" | nc -u 192.168.2.228 21567 -w 0
 #sleep 10

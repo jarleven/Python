@@ -25,14 +25,13 @@ IGNORETIME=100
 def sendData(netData):
     print("Sending data: ")
     print(netData)
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.connect((HOST, PORT))
-    sock.sendall(netData + "\n\n")
-    received = sock.recv(1024)
-    sock.close()
 
-    print("Got data echo: ")
-    print(received)
+    print("UDP target IP:", HOST)
+    print("UDP target port:", PORT )
+
+    sock = socket.socket(socket.AF_INET,    # Internet
+                         socket.SOCK_DGRAM) # UDP
+    sock.sendto(netData.encode('utf-8'), (HOST, PORT))
 
 
 def system_debug():
@@ -140,12 +139,13 @@ if espmac in module:
     lamp = module[espmac]
 else:
     print("Unknown device MAC %s" % espmac)
-    lamp = [10, 6, 7, 8]
+    lamp = [10, 21, 7, 8]
 
 print("IO pins are : ", pins)
 print("LAMPS are   : ", lamp)
 
 
+print("Sending events to %s:%s" % (myConfig.HOST, myConfig.PORT))
 onboardLED = Pin(led, Pin.OUT)
 onboardLED.off()
 
@@ -286,9 +286,8 @@ while True:
             else:
 
                 lampID=lamp[button.idx]
-                netData = "binary LED%d toggle" % lampID
-
+                netData = "%d:2" % lampID
                 sendData(netData)
-                print("Action on LED%d" % lampID)
+                print("Action on Button %d from pin %d" % (lampID, button.idx))
 
 

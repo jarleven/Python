@@ -30,3 +30,7 @@ cd ~/luma.examples
 # python3 examples/clock.py --display capture
 # python3 examples/clock.py --display pygame
 python3 examples/matrix.py --display pygame --transform=led_matrix --width 40 --height 16
+
+
+# Further reading:
+# https://tutorial.cytron.io/2018/11/22/displaying-max7219-dot-matrix-using-raspberry-pi/

@@ -53,9 +53,9 @@ wget https://raw.githubusercontent.com/jarleven/Python/master/ILI9340/image.py
 : '
 ```Bash
 
-	           3V3  (1) (2)  5V		    VCC
+	           3V3  (1) (2)  5V		VCC
 	         GPIO2  (3) (4)  5V			  
-	         GPIO3  (5) (6)  GND		  GND
+	         GPIO3  (5) (6)  GND		GND
 	         GPIO4  (7) (8)  GPIO14
 	           GND  (9) (10) GPIO15
 	        GPIO17 (11) (12) GPIO18

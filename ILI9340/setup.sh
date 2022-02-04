@@ -1,10 +1,4 @@
-Quick notes about the ILI9340
-
-https://learn.adafruit.com/2-2-tft-display
-
-
-
-
+#!/bin/bash
 
 cd ~
 
@@ -13,7 +7,7 @@ sudo apt upgrade -y
 sudo apt install -y vim git
 
 sudo apt install -y build-essential libfreetype6-dev libjpeg-dev libopenjp2-7 libtiff5
-sudo apt install -y python3 python3-pip python3-dev python3-smbus python3-imaging python3-numpy
+sudo apt install -y python3 python3-pip python3-dev python3-smbus python3-pil python3-numpy
 
 
 sudo raspi-config nonint do_spi 0

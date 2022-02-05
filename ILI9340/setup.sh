@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#from PIL import Image
-#print statements
 
 cd ~
 
@@ -12,41 +10,29 @@ sudo apt install -y vim git
 sudo apt install -y build-essential libfreetype6-dev libjpeg-dev libopenjp2-7 libtiff5
 sudo apt install -y python3 python3-pip python3-dev python3-smbus python3-pil python3-numpy
 
-sudo apt install -y 2to3
-
-
 python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade Pillow
-
-# Should work on Linux
-#easy_install Pillow 
-
-#Installing collected packages: pip
-#  WARNING: The scripts pip, pip3 and pip3.9 are installed in '/home/pi/.local/bin' which is not on PATH.
-#  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
-
 
 
 sudo raspi-config nonint do_spi 0
 sudo usermod -a -G spi,gpio pi
 
-git clone https://github.com/Funkrusha/Adafruit_Python_ILI9340.git
+#git clone https://github.com/Funkrusha/Adafruit_Python_ILI9340.git
 
 python3 -m pip install --upgrade Adafruit_ILI9341
 
 
-
-cd Adafruit_Python_ILI9340/examples
-
-# This example is Python2 so let us update it
-2to3 -w image.py
-
-python3 image.py
-
+# Download a modified version of the Adafruit example :
+# https://github.com/Funkrusha/Adafruit_Python_ILI9340/blob/master/examples/image.py
 wget https://raw.githubusercontent.com/jarleven/Python/master/ILI9340/image.py
 
- wget https://images.hdqwalls.com/walls/thumb/pokemon-detective-pikachu-poster-5k-lc.jpg -O pikachu.jpg
- wget https://images.hdqwalls.com/walls/thumb/ninetales-one-more-pokemon-pu.jpg -O ninetales.jpg
+
+#Download a few images
+wget https://images.hdqwalls.com/walls/thumb/pokemon-detective-pikachu-poster-5k-lc.jpg -O pikachu.jpg
+wget https://images.hdqwalls.com/walls/thumb/ninetales-one-more-pokemon-pu.jpg -O ninetales.jpg
+
+# Modified Adafruit example. Python3 and Pillow/PIL, Show downloaded images above
+python3 image.py
 
 
 # Connecting as instructed in this example : https://github.com/Funkrusha/Adafruit_Python_ILI9340/blob/master/examples/image.py

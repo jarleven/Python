@@ -4,6 +4,12 @@
 rm -f setup.sh && wget https://raw.githubusercontent.com/jarleven/Python/master/ILI9340/setup.sh && chmod +x setup.sh && ./setup.sh
 '
 
+#
+# Please note the display refresh is really slow atleast on a RPiv1. Consider to use some C implemantation instead.
+# https://github.com/juj/fbcp-ili9341
+#
+
+
 cd ~
 
 sudo apt update

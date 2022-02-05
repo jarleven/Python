@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-rm -f setup.sh && wget https://raw.githubusercontent.com/jarleven/flaskapp/main/luma/setup.sh && chmod +x setup.sh && ./setup.sh
+rm -f setup.sh && wget https://raw.githubusercontent.com/jarleven/Python/master/ILI9340/setup.sh && chmod +x setup.sh && ./setup.sh
 '
 
 cd ~

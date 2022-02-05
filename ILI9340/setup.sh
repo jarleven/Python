@@ -1,5 +1,8 @@
 #!/bin/bash
 
+: '
+rm -f setup.sh && wget https://raw.githubusercontent.com/jarleven/flaskapp/main/luma/setup.sh && chmod +x setup.sh && ./setup.sh
+'
 
 cd ~
 

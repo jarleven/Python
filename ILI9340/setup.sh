@@ -26,7 +26,7 @@ python3 -m pip install --upgrade Pillow
 sudo raspi-config nonint do_spi 0
 sudo usermod -a -G spi,gpio pi
 
-#git clone https://github.com/Funkrusha/Adafruit_Python_ILI9340.git
+# git clone https://github.com/Funkrusha/Adafruit_Python_ILI9340.git
 
 python3 -m pip install --upgrade Adafruit_ILI9341
 
@@ -36,7 +36,7 @@ python3 -m pip install --upgrade Adafruit_ILI9341
 wget https://raw.githubusercontent.com/jarleven/Python/master/ILI9340/image.py
 
 
-#Download a few images
+# Download a few images
 wget https://images.hdqwalls.com/walls/thumb/pokemon-detective-pikachu-poster-5k-lc.jpg -O pikachu.jpg
 wget https://images.hdqwalls.com/walls/thumb/ninetales-one-more-pokemon-pu.jpg -O ninetales.jpg
 

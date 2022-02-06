@@ -20,6 +20,7 @@
 # THE SOFTWARE.
 
 from PIL import Image
+import time
 
 import Adafruit_ILI9341 as TFT
 import Adafruit_GPIO as GPIO
@@ -48,6 +49,18 @@ disp = TFT.ILI9341(DC, rst=RST, spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_h
 # Initialize display.
 disp.begin()
 
+#
+# Draw a green screen with a red line on it
+# https://stackoverflow.com/questions/13053443/drawing-a-line-on-an-image-with-pil
+from PIL import Image, ImageDraw
+im = Image.new('RGBA', (240, 320), (0, 255, 0, 0)) 
+draw = ImageDraw.Draw(im) 
+draw.line((100,200, 150,300), fill=128)
+disp.display(im)
+time.sleep(5)
+
+
+
 while True:
 
     # Load an image.
@@ -61,6 +74,8 @@ while True:
     # Draw the image on the display hardware.
     print('Drawing image')
     disp.display(image)
+    time.sleep(5)
+
 
     print('Loading image...')
     image = Image.open('ninetales.jpg')
@@ -71,3 +86,5 @@ while True:
     # Draw the image on the display hardware.
     print('Drawing image')
     disp.display(image)
+    time.sleep(5)
+

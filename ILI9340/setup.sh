@@ -48,7 +48,7 @@ python3 image.py
 : '
 ```Bash
 
-	           3V3  (1) (2)  5V		VCC
+	           3V3  (1) (2)  5V		VIN
 	         GPIO2  (3) (4)  5V			  
 	         GPIO3  (5) (6)  GND		GND
 	         GPIO4  (7) (8)  GPIO14

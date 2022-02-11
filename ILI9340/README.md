@@ -1,4 +1,4 @@
-Quick notes about the ILI9340
+### Short howto, setupscript and demo of the ILI9340
 
 
 ![alt text](https://github.com/jarleven/Python/blob/master/ILI9340/DSC_9809.jpg)

@@ -13,11 +13,9 @@
 
 
 
-
-```Bash
 			   3V3  (1) (2)  5V			2 VCC
-			 GPIO2  (3) (4)  5V			  
-			 GPIO3  (5) (6)  GND			6 GND
+	3 SDA		 GPIO2  (3) (4)  5V			  
+	5 SCL		 GPIO3  (5) (6)  GND			6 GND
 			 GPIO4  (7) (8)  GPIO14
 			   GND  (9) (10) GPIO15
 			GPIO17 (11) (12) GPIO18

@@ -10,7 +10,7 @@
 			   3V3 (17) (18) GPIO24
    	DIN 19		GPIO10 (19) (20) GND
 			 GPIO9 (21) (22) GPIO25
-     	CLK 23		GPIO11 (23) (24) GPIO8			24 Enable/CS
+     	CLK 23		GPIO11 (23) (24) GPIO8			24 Load/Enable/CS
 			   GND (25) (26) GPIO7
 			 GPIO0 (27) (28) GPIO1
 			 GPIO5 (29) (30) GND

@@ -1,10 +1,10 @@
 ```
 
-	VCC  GND
-	VCC  GND
-	VCC  GND
-	CLK  LOAD
-	DIN  ---
+	 VCC  GND
+	 VCC  GND
+	 VCC  GND
+	LOAD  CLK
+	 DIN  ---
 
 
 

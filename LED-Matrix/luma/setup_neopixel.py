@@ -2,7 +2,7 @@
 
 
 : '
-wget https://raw.githubusercontent.com/jarleven/flaskapp/main/luma/setup_neopixel.sh && chmod +x setup_neopixel.sh && ./setup_neopixel.sh
+wget https://raw.githubusercontent.com/jarleven/Python/master/LED-Matrix/luma/setup_neopixel.py && chmod +x setup_neopixel.sh && ./setup_neopixel.sh
 '
 # 
 # https://downloads.raspberrypi.org/raspios_oldstable_lite_armhf/images/raspios_oldstable_lite_armhf-2022-01-28/2022-01-28-raspios-buster-armhf-lite.zip

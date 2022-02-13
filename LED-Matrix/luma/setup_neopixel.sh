@@ -5,8 +5,8 @@
 wget https://raw.githubusercontent.com/jarleven/Python/master/LED-Matrix/luma/setup_neopixel.sh && chmod +x setup_neopixel.sh && ./setup_neopixel.sh
 '
 # 
-# https://downloads.raspberrypi.org/raspios_oldstable_lite_armhf/images/raspios_oldstable_lite_armhf-2022-01-28/2022-01-28-raspios-buster-armhf-lite.zip
-# This is atleast working on Buster !
+#  Tested both on Buster and Bullseye!
+#
 
 cd ~
 
@@ -26,7 +26,9 @@ git clone https://github.com/rm-hull/luma.led_matrix.git
 sudo pip3 install luma.led-matrix
 cd luma.led_matrix/
 
+echo "Starting Demo"
 sudo python3 examples/neopixel_demo.py
+
 
 #
 # In the examples/matrix_demo.py include the ws2812 and setup the device as a ws2812 for scrolling text examples
@@ -61,11 +63,10 @@ sudo python3 examples/neopixel_demo.py
 			GPIO26 (37) (38) GPIO20
 			   GND (39) (40) GPIO21
 
+
+
+https://luma-led-matrix.readthedocs.io/_/downloads/en/stable/pdf/"
+Note: The ws2812 driver uses the ws2812 PyPi package to interface to the daisychained LEDs. It uses DMA (direct"
+memory access) via /dev/mem which means that it has to run in privileged mode (via sudo root access)."
 ```
 '
-
-echo ""
-echo "https://luma-led-matrix.readthedocs.io/_/downloads/en/stable/pdf/"
-echo "Note: The ws2812 driver uses the ws2812 PyPi package to interface to the daisychained LEDs. It uses DMA (direct"
-echo "memory access) via /dev/mem which means that it has to run in privileged mode (via sudo root access)."
-

@@ -1,27 +1,41 @@
 ### Minimal description
 
-* https://pypi.org/project/hue-py/
+
+* https://github.com/studioimaginaire/phue
 
 ```
 
-pip install hue-py
+pip3 install phue
+
+
 
 ```
 
-```
-# First timeyou run this. For this to succeed, you must first press the link button on the bridge.
-from hue_api import HueApi
-api = HueApi()
-api.create_new_user(bridge_ip_address)
-```
+```Python
+
+from phue import Bridge
+import time
+
+b = Bridge('192.168.1.192')
+
+# If the app is not registered and the button is not pressed, press the button and call connect() (this only needs to be run a single time)
+b.connect()
+
+# Get the bridge state (This returns the full dictionary that you can explore)
+b.get_api()
+
+# Prints if light 1 is on or not
+b.get_light(1, 'on')
+
+# Set brightness of lamp 1 to max
+b.set_light(1, 'bri', 254)
+
+time.sleep(4)
+
+# Set brightness of lamp 1 to 50%
+b.set_light(1, 'bri', 127)
+
+
 
 ```
-# After pairing
 
-from hue_api import HueApi
-api = HueApi()
-api.load_existing()
-
-api.fetch_lights()
-api.list_lights()
-```

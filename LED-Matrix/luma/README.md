@@ -1,4 +1,13 @@
-```Bash
+```
+
+	VCC  GND
+	VCC  GND
+	VCC  GND
+	CLK  LOAD
+	DIN  ---
+
+
+
 			   3V3  (1) (2)  5V			2 VCC
 			 GPIO2  (3) (4)  5V			  
 			 GPIO3  (5) (6)  GND			6 GND

@@ -60,31 +60,29 @@ disp.display(im)
 time.sleep(5)
 
 
+# Load an image.
+print('Loading image...')
+#image = Image.open('cat.jpg')
+image1 = Image.open('pikachu.jpg')
+
+# Resize the image and rotate it so it's 240x320 pixels.
+image1 = image1.rotate(0).resize((240, 320))
+
+print('Loading image...')
+image2 = Image.open('ninetales.jpg')
+# Resize the image and rotate it so it's 240x320 pixels.
+image2 = image2.rotate(0).resize((240, 320))
+
 
 while True:
 
-    # Load an image.
-    print('Loading image...')
-    #image = Image.open('cat.jpg')
-    image = Image.open('pikachu.jpg')
+    # Draw images on the display.
 
-    # Resize the image and rotate it so it's 240x320 pixels.
-    image = image.rotate(0).resize((240, 320))
-
-    # Draw the image on the display hardware.
     print('Drawing image')
-    disp.display(image)
+    disp.display(image1)
     time.sleep(5)
 
-
-    print('Loading image...')
-    image = Image.open('ninetales.jpg')
-
-    # Resize the image and rotate it so it's 240x320 pixels.
-    image = image.rotate(0).resize((240, 320))
-
-    # Draw the image on the display hardware.
     print('Drawing image')
-    disp.display(image)
+    disp.display(image2)
     time.sleep(5)
 

@@ -1,3 +1,12 @@
+### Inventory
+
+* UR10 (TODO I'm uncertain about the exact model number / Controller and firmware)
+* RobotiQ 2F85 gripper
+* Robotiq Wrist camera
+
+* https://robotiq.com/support/wrist-camera
+
+
 ### Basic guide
 * https://robodk.com/doc/en/Basic-Guide.html
 

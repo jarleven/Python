@@ -1,3 +1,6 @@
+### Basic guide
+* https://robodk.com/doc/en/Basic-Guide.html
+
 ### Drawing with a robot
 
 

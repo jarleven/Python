@@ -1,7 +1,6 @@
 ![EidVGS Lab](https://github.com/jarleven/Python/blob/master/RoboDK/UR10-RobotiQ-Table.png)
 
 
-
 ### Inventory
 
 * UR10 (TODO I'm uncertain about the exact model number / Controller and firmware)
@@ -41,3 +40,4 @@
 [Overengineered pen holder](https://www.thingiverse.com/thing:2459624)
 
 
+![EidVGS drawing](https://github.com/jarleven/Python/blob/master/RoboDK/UR10-Drawing-with-robot.png)

@@ -11,6 +11,9 @@
 * https://robotiq.com/support/wrist-camera
 
 
+* 192.168.1.116	4c:cc:6a:99:fc:84
+
+
 ### Basic guide
 * https://robodk.com/doc/en/Basic-Guide.html
 

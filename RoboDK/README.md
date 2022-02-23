@@ -1,3 +1,7 @@
+![EidVGS Lab](https://github.com/jarleven/Python/blob/master/RoboDK/UR10-RobotiQ-Table.png)
+
+
+
 ### Inventory
 
 * UR10 (TODO I'm uncertain about the exact model number / Controller and firmware)

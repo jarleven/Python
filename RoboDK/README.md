@@ -23,6 +23,12 @@
 * https://robodk.com/offline-programming
 
 
+### Scalable Vector Graphics (SVG) Tools
+
+* https://inkscape.org/
+* https://en.wikipedia.org/wiki/Scalable_Vector_Graphics
+* https://wiki.evilmadscientist.com/Creating_filled_regions
+
 
 ### Tool holders
 [Overengineered pen holder](https://www.thingiverse.com/thing:2459624)

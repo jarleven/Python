@@ -3,7 +3,8 @@
 
 ### Inventory
 
-* UR10 (TODO I'm uncertain about the exact model number / Controller and firmware)
+* UR10 (CB31UR10  28 Jun 2017) As of 25.02.2022 firmware have been updated to 3.15.6 CB3 
+* 
 * RobotiQ 2F85 gripper
 * Robotiq Wrist camera
 

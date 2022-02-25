@@ -36,9 +36,11 @@
 * https://wiki.evilmadscientist.com/Creating_filled_regions
 
 
-### Tool holders
+### Pen Tool Holders
 [Overengineered pen holder](https://www.thingiverse.com/thing:2459624)
 
+### Spindle Tool Holders
+* https://www.thingiverse.com/thing:2746962
 
 ### Universal Robots Maintainance 
 * https://www.youtube.com/watch?v=1HFZ5vXjR0Q

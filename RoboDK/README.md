@@ -42,6 +42,9 @@
 ### Spindle Tool Holders
 * https://www.thingiverse.com/thing:2746962
 
+### Clamps / Utilities
+* https://www.thingiverse.com/thing:3832407
+
 ### Universal Robots Maintainance 
 * https://www.youtube.com/watch?v=1HFZ5vXjR0Q
 * RoboDK Web https://www.youtube.com/watch?v=BwSb9yfi_IU

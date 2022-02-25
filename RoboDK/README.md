@@ -48,3 +48,5 @@
 
 
 ![EidVGS drawing](https://github.com/jarleven/Python/blob/master/RoboDK/UR10-Drawing-with-robot.png)
+
+![55mm spindle](https://github.com/jarleven/Python/blob/master/RoboDK/spindle.png)

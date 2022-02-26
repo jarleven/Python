@@ -14,4 +14,11 @@ File "C:\RoboDK\Python\robodk\robolink.py", line 1014, in _moveX
 self._check_status() #will wait here
 
 
+
+
+robolink throws an exception here
+elif status == 11:
+  raise StoppedError(self.LAST_STATUS_MESSAGE)
+
+
 ```

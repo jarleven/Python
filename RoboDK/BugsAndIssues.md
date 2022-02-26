@@ -7,4 +7,11 @@ Generate robot program doesn't work with Python https://robodk.com/forum/Thread-
 
 
 
+
+robolink check_status()
+
+File "C:\RoboDK\Python\robodk\robolink.py", line 1014, in _moveX
+self._check_status() #will wait here
+
+
 ```

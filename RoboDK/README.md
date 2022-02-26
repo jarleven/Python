@@ -35,6 +35,7 @@
 * https://inkscape.org/
 * https://en.wikipedia.org/wiki/Scalable_Vector_Graphics
 * https://wiki.evilmadscientist.com/Creating_filled_regions
+* https://iros.github.io/patternfills/sample_svg.html
 
 
 ### Pen Tool Holders

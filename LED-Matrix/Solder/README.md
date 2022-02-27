@@ -3,6 +3,8 @@
 
 
 ### Hand soldering SMT components
+ 
+ * https://www.youtube.com/watch?v=fYInlAmPnGo
 
 
 ### DIY SMT hotplate and reflow oven

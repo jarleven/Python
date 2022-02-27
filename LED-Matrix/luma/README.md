@@ -42,3 +42,6 @@ https://luma-led-matrix.readthedocs.io/_/downloads/en/stable/pdf/"
 Note: The ws2812 driver uses the ws2812 PyPi package to interface to the daisychained LEDs. It uses DMA (direct"
 memory access) via /dev/mem which means that it has to run in privileged mode (via sudo root access)."
 ```
+
+
+[Raspberry Pi pinout](https://el3.no/wp-content/uploads/2020/10/GPIO-Pinout-Diagram-2-2048x1176.png)

@@ -44,4 +44,4 @@ memory access) via /dev/mem which means that it has to run in privileged mode (v
 ```
 
 
-[Raspberry Pi pinout](https://el3.no/wp-content/uploads/2020/10/GPIO-Pinout-Diagram-2-2048x1176.png)
+![Raspberry Pi pinout](https://el3.no/wp-content/uploads/2020/10/GPIO-Pinout-Diagram-2-2048x1176.png)

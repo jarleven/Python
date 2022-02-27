@@ -1,12 +1,16 @@
 ```
 
-	 VCC  GND
-	 VCC  GND
-	 VCC  GND
-	LOAD  CLK
-	 DIN  ---
+		 VCC  GND
+		 VCC  GND
+		 VCC  GND
+		LOAD  CLK
+		 DIN  ---
 
-
+        2x5 Connector on the LED matrix
+  
+ 
+ 
+ 
 
 			   3V3  (1) (2)  5V			2 VCC
 			 GPIO2  (3) (4)  5V			  

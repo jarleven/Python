@@ -6,6 +6,10 @@
  
  * https://www.youtube.com/watch?v=fYInlAmPnGo
 
+### Paste / Glue dispencer
+* https://www.instructables.com/How-to-set-up-repair-adjust-and-use-a-solder-paste/
+* https://www.eevblog.com/forum/reviews/ydl-983a-solder-paster-dispense-translationlabel/
+
 
 ### DIY SMT hotplate and reflow oven
 

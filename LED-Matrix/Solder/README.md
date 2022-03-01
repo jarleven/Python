@@ -2,7 +2,7 @@
 
 
 
-### Hand soldering SMT components
+### Handsoldering SMT components
  
  * https://www.youtube.com/watch?v=fYInlAmPnGo
 

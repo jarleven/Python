@@ -6,6 +6,20 @@ rm -rf setup-luma-emulator.sh && wget https://raw.githubusercontent.com/jarleven
 '
 
 sudo apt install -y git vim
+sudo apt install -y python3-dev python3-pip build-essential
+sudo apt install -y libsdl-dev libportmidi-dev libsdl-ttf2.0-dev libsdl-mixer1.2-dev libsdl-image1.2-dev
+
+sudo -H pip3 install --upgrade --ignore-installed pip3 setuptools
+
+sudo -H pip install --upgrade luma.emulator
+
+cd ~/luma.examples
+
+python3 examples/clock.py -d pygame --transform=led_matrix
+
+
+
+
 sudo apt install -y python3-dev python3-pip libfreetype6-dev libjpeg-dev build-essential
 sudo apt install -y libsdl-dev libportmidi-dev libsdl-ttf2.0-dev libsdl-mixer1.2-dev libsdl-image1.2-dev
 sudo apt install -y python3-testresources

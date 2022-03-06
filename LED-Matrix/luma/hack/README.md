@@ -73,40 +73,22 @@ UNICORN =  [
         
         if self._mapping is not None:
             layout=self._mapping
-            
       
             new_image = image.copy()
           
             width  = new_image.width
             height = new_image.height
-            #print("Width %3d  Height %3d" % (width, height))
             pixelId=0
+            
             for x in range(width):
                 for y in range(height):
-                    #print(pixelId,x,y)
                     pixelval = image.getpixel((x,y))
-                    #print(pixelId,x,y)
-                    #if pixelId in (0,1,2,3,4,5,7,8,16, 56,63,64,65,127,120,71):
-                    #    pixelval = 255
-                    #else:
-                    #       pixelval = 0
-                    
 
                     mappedpos = layout.index(pixelId)
                     Oy = int(mappedpos/width)
                     Ox = mappedpos%width 
-                    #print(pixelId,x,y, "  ", mappedpos, Ox,Oy)
 
-                    
-
-
-                    #new_image.putpixel((x, y), (pixelval))
-                    #print(Ox, Oy)
                     new_image.putpixel((Ox, Oy), (pixelval))
-                    #print("pixel %2d x/y  %2d/%2d   --  out pixel %2d x/y  %2d/%2d  value %3d" % 
-                    #        (pixelId, x, y, mappedpos, Ox, Oy, pixelval))
-
-
                     pixelId = pixelId+1
         return new_image
 ```

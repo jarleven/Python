@@ -90,5 +90,5 @@ UNICORN =  [
 
                     new_image.putpixel((Ox, Oy), (pixelval))
                     pixelId = pixelId+1
-        return new_image
+            return new_image
 ```

@@ -3,6 +3,7 @@
 
 ```Python
 # Layout from 2020 followed by layout from 2022
+# Two cascaded matrixes with individual different LED/pixel layout
 
 MY_MAPPING = [
         63,  62,  61,  60,  59,  58,  57,  56,  64,  72,  80,  88,  96, 104, 112, 120, 

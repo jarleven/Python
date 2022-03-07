@@ -1,4 +1,5 @@
 # Eventdriven pushbutton
+# https://pinout.xyz/
 
 import RPi.GPIO as GPIO
 

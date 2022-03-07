@@ -1,6 +1,4 @@
-### Eventdriven pushbutton
-
-```Python
+# Eventdriven pushbutton
 
 import RPi.GPIO as GPIO
 
@@ -17,4 +15,3 @@ GPIO.add_event_detect(17, GPIO.FALLING, callback=myCallback, bouncetime=250)
 while True:
     pass
 
-```

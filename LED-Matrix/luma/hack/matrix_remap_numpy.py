@@ -7,7 +7,9 @@ Created on Sat Mar 12 13:05:12 2022
 
 
 # Download this file and the mappings to run this Python script
-# wget https://raw.githubusercontent.com/jarleven/Python/master/LED-Matrix/luma/hack/  && wget https://raw.githubusercontent.com/jarleven/Python/master/LED-Matrix/luma/hack/ 
+# 
+# wget https://raw.githubusercontent.com/jarleven/Python/master/LED-Matrix/luma/hack/matrix_remap_numpy.py && wget https://raw.githubusercontent.com/jarleven/Python/master/LED-Matrix/luma/hack/matrix_mapping.py
+#
 
 
 layout = [

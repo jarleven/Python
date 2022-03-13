@@ -198,8 +198,9 @@ for h in range(H):
     print("")
 
 print("")
-#print("device = ws2812(width=%d, height=%d, mapping=MY_MAPPING)" % (width, height))
 print("device = ws2812(width=%d, height=%d, mapping=MY_MAPPING)" % ( MW*len(layout[0]), MH*len(layout) ) )
+print("device = max7219(width=%d, height=%d, mapping=MY_MAPPING)" % ( MW*len(layout[0]), MH*len(layout) ) )
+
 
 print("")   
 print(" # Note that the /usr/local/bin/... decice.py must be patched with :")

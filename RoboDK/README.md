@@ -17,6 +17,8 @@
 * Run simulator in VMWare player
 * https://www.universal-robots.com/download/software-cb-series/simulator-non-linux/offline-simulator-cb-series-non-linux-ursim-3143/
 
+![URSIM](https://github.com/jarleven/Python/blob/master/RoboDK/Images/URSIM.png)
+
 ### RobotiQ gripper
  * https://robotiq.com/support/2f85-140-adaptive-robot-gripper
 

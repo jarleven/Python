@@ -13,7 +13,7 @@
 
 * 192.168.1.116	4c:cc:6a:99:fc:84
 
-### URSIM
+### URSim
 * Run simulator in VMWare player
 * https://www.universal-robots.com/download/software-cb-series/simulator-non-linux/offline-simulator-cb-series-non-linux-ursim-3143/
 

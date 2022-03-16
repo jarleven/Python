@@ -17,6 +17,8 @@ layout = [
          [  "B", "B", "C", "A", "A"], 
          ]
 
+from matrix_mapping import *
+
 mapping = {
     "A" : MAPPING_2022,
     "B" : MAPPING_2020,
@@ -27,7 +29,6 @@ mapping = {
 import numpy as np
 from pprint import pprint
 
-from matrix_mapping import *
 
 
 # Number of pixels in the Matrix
@@ -194,7 +195,6 @@ for h in range(H):
 
         mMapping = layout[h][w]
         print ("%s " % mMapping, end="")
-        #matrix = mapping["A"]
     print("")
 
 print("")

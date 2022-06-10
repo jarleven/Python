@@ -1,6 +1,9 @@
 ![EidVGS Lab](https://github.com/jarleven/Python/blob/master/RoboDK/UR10-RobotiQ-Table.png)
 
 
+### TODO: Test this link https://robodk.com/forum/Thread-UR10-double-offset
+
+
 ### Inventory
 
 * UR10 (CB31UR10  28 Jun 2017) As of 25.02.2022 firmware have been updated to 3.15.6 CB3 

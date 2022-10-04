@@ -1,4 +1,4 @@
-# wget 
+# wget https://raw.githubusercontent.com/jarleven/Python/master/Micro-ROS/ros-foxy.sh && chmod +x ros-foxy.sh
 
 # https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html
 

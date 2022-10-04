@@ -4,6 +4,22 @@
 # Thanks to https://robofoundry.medium.com/raspberry-pi-pico-ros2-via-micro-ros-actually-working-in-1-hr-9f7a3782d3e3
 
 
+
+
+
+####  Final changes
+
+https://github.com/micro-ROS/micro_ros_raspberrypi_pico_sdk/blob/humble/CMakeLists.txt
+
+which arm-none-eabi-gcc
+/usr/bin/arm-none-eabi-gcc
+
+git clone https://github.com/micro-ROS/micro_ros_raspberrypi_pico_sdk.git
+
+####
+
+
+
 sudo apt update && sudo apt upgrade -y
 
 # Step 1 — install pre-requisites

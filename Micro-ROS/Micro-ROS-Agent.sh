@@ -1,4 +1,4 @@
-# wget 
+# wget https://raw.githubusercontent.com/jarleven/Python/master/Micro-ROS/Micro-ROS-Agent.sh && chmod +x Micro-ROS-Agent.sh
 
 # https://artivis.github.io/post/2021/pi-pico-uros-getting-started/
 

@@ -31,6 +31,14 @@ git clone https://github.com/micro-ROS/micro_ros_raspberrypi_pico_sdk.git
 cd micro_ros_raspberrypi_pico_sdk
 mkdir build
 cd build
-cmake ..
+cmake .
 make
 
+
+# Step 4— Plug-in Pico to show up as USB drive and copy the uf2 file generated for the example code
+#
+# At this point hold the BOOTSEL button down on Pico and plugin the USB cable into your computer. It should show up as USB drive.
+#
+# Copy the .uf2 file generated from build step earlier to Pico like this
+
+# cp build/pico_micro_ros_example.uf2 /media/$USER/RPI-RP2

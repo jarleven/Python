@@ -32,5 +32,6 @@ sudo adduser 'USERNAME' audio
 
 mpg321 -o alsa 'FILENAME.mp3'
 
+alsamixer
 
 ```

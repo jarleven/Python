@@ -22,3 +22,15 @@ sudo apt-get install mpg123
 	mpg123 -2 -0   or  mpg123 -2 -m   Downmix frequency and one channel only or mono  (TODO! fix this explanation)
 
 
+## Play music on Ubuntu server 22.04 
+```bash
+
+sudo apt install -y alsa alsa-utils alsa-tools
+sudo apt install mpg321
+
+sudo adduser 'USERNAME' audio
+
+mpg321 -o alsa 'FILENAME.mp3'
+
+
+```

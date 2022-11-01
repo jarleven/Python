@@ -1,6 +1,13 @@
 #### Not really Python but general Linux stuff
 
+## Download on the commandline
+```bash
 
+wget "https://www.digi.no/?module=TekComics&service=image&id=dilbert&key=2022-10-26" -O dilbert.png
+
+curl -JLO "https://www.digi.no/?module=TekComics&service=image&id=dilbert&key=2022-10-26" -o dilbert.png
+
+```
 
 ## Framebuffer / remote display images
 ```bash

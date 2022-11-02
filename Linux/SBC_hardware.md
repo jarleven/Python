@@ -28,5 +28,18 @@ Add this to the "/etc/lightdm/lightdm.conf" file
 allow-guest=false
 user-session=xfce
 ```
+From : https://www.configserverfirewall.com/ubuntu-linux/install-desktop-on-ubuntu-server/
 
 
+To enable x at startup time you can use:
+```bash
+sudo systemctl enable graphical.target --force
+sudo systemctl set-default graphical.target
+```
+
+And to disable it
+```bash
+sudo systemctl enable multi-user.target --force
+sudo systemctl set-default multi-user.target
+```
+From : https://unix.stackexchange.com/questions/520045/startx-not-automatically-running-on-reboot

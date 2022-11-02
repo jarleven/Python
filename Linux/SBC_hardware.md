@@ -11,6 +11,10 @@ https://developer.solid-run.com/knowledge-base/hummingboard-gate-edge-getting-st
     link/ether da:91:08:24:4f:f5 brd ff:ff:ff:ff:ff:ff
     inet 192.168.1.119/24 brd 192.168.1.255 scope global eth0
 
+
+Jumpers for boot select
+https://solidrun.atlassian.net/wiki/spaces/developer/pages/286621835/HummingBoard+Edge+Gate+Boot+Jumpers
+
 ```
 
 

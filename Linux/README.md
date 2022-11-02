@@ -66,4 +66,15 @@ date | cowsay
 
 ```bash
 
+jarleven@FFMPEG1:~$ crontab -l
+0 1 * * * /home/jarleven/move_day.sh
+
+@reboot (. ~/.profile; /usr/bin/screen -dmS YouTube ~/stream_file.sh)
+
+
+
+
 ```
+
+
+

@@ -18,6 +18,17 @@ https://solidrun.atlassian.net/wiki/spaces/developer/pages/286621835/HummingBoar
 ```
 
 
+#Hummingboard pulse 1
+
+```bash
+https://developer.solid-run.com/knowledge-base/hummingboard-pulse-getting-started/
+
+https://www.solid-run.com/embedded-industrial-iot/nxp-i-mx8-family/imx8-som/
+
+https://www.solid-run.com/wp-content/uploads/2020/09/i.MX8-SOM-front-large-960x430.png
+
+```
+
 ```bash
 
 apt-get update

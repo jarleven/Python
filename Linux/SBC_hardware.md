@@ -68,4 +68,9 @@ From : https://unix.stackexchange.com/questions/520045/startx-not-automatically-
 ```bash
 https://www.nxp.com/docs/en/user-guide/PICO-IMX7UL-USG.pdf
 
+https://forum.digikey.com/t/debian-getting-started-with-the-pico-pi-imx7/12429
+
+https://www.hackster.io/85787/pico-pi-and-yocto-project-7fa6ac
+
+
 ```

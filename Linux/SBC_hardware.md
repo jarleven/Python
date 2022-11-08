@@ -61,3 +61,11 @@ sudo systemctl enable multi-user.target --force
 sudo systemctl set-default multi-user.target
 ```
 From : https://unix.stackexchange.com/questions/520045/startx-not-automatically-running-on-reboot
+
+
+
+### PICO-PI REV:B1
+```bash
+https://www.nxp.com/docs/en/user-guide/PICO-IMX7UL-USG.pdf
+
+```

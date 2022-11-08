@@ -76,6 +76,9 @@ https://forum.digikey.com/t/debian-getting-started-with-the-pico-pi-imx7/12429
 
 https://www.hackster.io/85787/pico-pi-and-yocto-project-7fa6ac
 
+
+https://gist.github.com/liquidx/fd1002ec870a7c13f04a0b8a44744246
+
 Disk images:
 https://download.technexion.com/demo_software/PICO/IMX7/pico-imx7-emmc/
 

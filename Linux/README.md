@@ -1,5 +1,14 @@
 #### Not really Python but general Linux stuff
 
+
+## Download on the commandline
+```bash
+
+sudo useradd -m username
+
+
+```
+
 ## Download on the commandline
 ```bash
 

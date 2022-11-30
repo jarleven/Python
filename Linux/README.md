@@ -73,9 +73,13 @@ date | cowsay
 
 
 ### Crontab
+https://crontab.guru/
 ```bash
 
 @reboot (. ~/.profile; /usr/bin/screen -dmS YouTube ~/stream_file.sh)
+
+@reboot (sleep 10; export DISPLAY=:0.0; python /absolute/path/to/script.py) 
+
 
 # Note this must be in the root crontab (sudo crontab -e)
 0 7 * * * /sbin/shutdown -r now

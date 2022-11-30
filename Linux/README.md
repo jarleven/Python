@@ -72,14 +72,13 @@ date | cowsay
 
 
 
-
+### Crontab
 ```bash
-
-jarleven@FFMPEG1:~$ crontab -l
-0 1 * * * /home/jarleven/move_day.sh
 
 @reboot (. ~/.profile; /usr/bin/screen -dmS YouTube ~/stream_file.sh)
 
+# Note this must be in the root crontab (sudo crontab -e)
+0 7 * * * /sbin/shutdown -r now
 
 
 

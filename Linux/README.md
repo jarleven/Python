@@ -1,7 +1,7 @@
 #### Not really Python but general Linux stuff
 
 
-## Download on the commandline
+## Add a user
 ```bash
 
 sudo useradd -m username

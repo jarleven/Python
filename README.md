@@ -36,11 +36,3 @@ pip install python-tk
 
 pip3 install imutils
  
-
-
-
-
-
-# Tortoisegit
-https://tortoisegit.org/download/
-

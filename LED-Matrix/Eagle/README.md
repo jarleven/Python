@@ -1,9 +1,6 @@
 ### Eagle library and description of the EidVGS LED matrix
 
 
-´´´
-https://componentsearchengine.com/
-´´´
 
 
 The LEDMatrix.sch file contain a starting point for the project.

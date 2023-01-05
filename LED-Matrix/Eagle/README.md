@@ -1,7 +1,10 @@
-### Eagle library and description of the EidVGS LED matrix
+### MAX7219 LED Matrix
+
+A schematic starting point
 
 
+### Schematic
+
+* [Eagle schematic](https://raw.githubusercontent.com/jarleven/Python/master/LED-Matrix/Eagle/LEDMatrix.sch "download")
 
 
-The LEDMatrix.sch file contain a starting point for the project.
-TODO: Check 3D models for the components in the schematic file.

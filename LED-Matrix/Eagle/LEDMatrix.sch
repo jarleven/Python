@@ -16855,14 +16855,14 @@ In this library the device names are the same as the pin names of the symbols, t
 </class>
 </classes>
 <parts>
-<part name="IC1" library="MAX7219CWG" deviceset="MAX7219CWG" device="" package3d_urn="urn:adsk.eagle:package:24434272/3"/>
+<part name="IC1" library="MAX7219CWG" deviceset="MAX7219CWG" device="" package3d_urn="urn:adsk.eagle:package:24434272/3" override_package3d_urn="urn:adsk.eagle:package:24434272/4" override_package_urn="urn:adsk.eagle:footprint:24434270/1"/>
 <part name="LED1" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIPLED_1206" package3d_urn="urn:adsk.eagle:package:15823/2" value="SMT 1206"/>
-<part name="C1" library="Clean-Kong" deviceset="CPOL-EU" device="E5-8.5" override_package3d_urn="urn:adsk.eagle:package:32903541/2" override_package_urn="urn:adsk.eagle:footprint:32903542/1" value="10uF"/>
+<part name="C1" library="Clean-Kong" deviceset="CPOL-EU" device="E5-8.5" value="10uF"/>
 <part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="100nF"/>
 <part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="56k"/>
 <part name="SUPPLY1" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="DATAIN" library="Wurth_Elektronik_Electromechanic_Board_to_Board_Connectors_rev16a" deviceset="610X1021121" device="" override_package3d_urn="urn:adsk.eagle:package:25140794/2" override_package_urn="urn:adsk.eagle:footprint:25140796/1" value="2x5"/>
+<part name="DATAIN" library="Wurth_Elektronik_Electromechanic_Board_to_Board_Connectors_rev16a" deviceset="610X1021121" device="" value="2x5"/>
 </parts>
 <sheets>
 <sheet>

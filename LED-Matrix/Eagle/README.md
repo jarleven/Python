@@ -3,7 +3,7 @@
 A schematic starting point
 
 
-### Schematic
+### Schematic (Right click link and select save as)
 
 * [Eagle schematic](https://raw.githubusercontent.com/jarleven/Python/master/LED-Matrix/Eagle/LEDMatrix.sch "download")
 

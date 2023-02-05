@@ -1,4 +1,5 @@
-
+# https://hackspace.raspberrypi.com/books/micropython-pico/pdf
+# https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-python-sdk.pdf
 
 # For more details and step by step guide visit: Microcontrollerslab.com
 try:
@@ -11,6 +12,7 @@ import time
 import ntptime
 import network
 
+# Garbage collector
 import gc
 gc.collect()
 
@@ -36,7 +38,7 @@ while True:
     utc = time.localtime() 
     # (year, month, mday, hour, minute, second, weekday, yearday)
     print(utc)
-    # Format and add 1 hour !
+    # Format and add 1 hour, dirty hack !
     lokaltid = ("Klokka er %s:%s:%s"%(utc[3]+1,utc[4],utc[5]))
     print(lokaltid)
     print("")

@@ -14,8 +14,13 @@ import gc
 gc.collect()
 
 
-ssid = '3DATA'
-password = 'Vinter2022'
+
+
+from ssidPassword import ssid, password
+# ssidPassword.py contains
+#   ssid = '3DATA'
+#   password = 'Vinter2022'
+
 
 
 station = network.WLAN(network.STA_IF)
@@ -44,8 +49,8 @@ def web_page():
 <body>
     <form action="/url" method="GET">
         <label>
-            Please enter your username
-            <input type="text" name="username" minlength="3" maxlength="20" required>
+            Please enter the LED Matrix tekst
+            <input type="text" name="matrixtext" minlength="1" maxlength="20" required>
         </label>
         <button type="submit">Submit</button>  
     </form>
@@ -71,15 +76,16 @@ while True:
         request = str(request)
         print("")
         print('GET Rquest Content = %s' % request)
-        led_on = request.find('/url?username=')
-        endpos = request.find(' HTTP/1.1')
+        startpos = request.find('/url?matrixtext=')
 
-        print("")
-        print("USERNAME CONTAIN : %s " % led_on)
-        
-        a=len("/url?username=")
-        print(request[led_on+a:endpos])
-        
+        if startpos == 6:
+
+            endpos = request.find(' HTTP/1.1')
+
+            print("")
+            matrixText = request[startpos+len("/url?matrixtext="):endpos]
+            print("You sent [%s]" % matrixText)
+                
         response = web_page()
         conn.send('HTTP/1.1 200 OK\n')
         conn.send('Content-Type: text/html\n')

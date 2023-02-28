@@ -110,14 +110,14 @@ for z in range(8):
     for w in range (8):
 
         
-        #if(line & 0x80 >> w):
-        if(line & 0x01 << w):
+        if(line & 0x80 >> w):
+        #if(line & 0x01 << w):
 
             
             print("1", end="")
         
-            output[w] = output[w] | (0x80 >> z)
-            #output[w] = output[w] | (0x01 << z)
+            #output[w] = output[w] | (0x80 >> z)
+            output[w] = output[w] | (0x01 << z)
 
         else:
             print("0", end="")

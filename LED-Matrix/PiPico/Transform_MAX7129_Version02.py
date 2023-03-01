@@ -64,6 +64,8 @@ Created on Tue Feb 28 09:36:28 2023
 #
 #                line = _DIGIT0 + y
 #                value = self.buffer[(y * self.num) + m]
+#                print("linje %d  verdi 0x%02x  " % (line, value))
+#                print("%d 0x%02x" % (line, value))
 #                self.spi.write(bytearray([line, value]))
 #            self.cs(1)
 
@@ -97,6 +99,7 @@ for i in range(8):
 
 print("")
 
+
 output = [0x00, 0x00, 0x00, 0x00,  0x00, 0x00, 0x00, 0x00]    
 
 # Rotate the input buffer and put the rotated bitfields in the output buffer
@@ -117,18 +120,19 @@ for z in range(8):
         #if(line & 0x01 << w):
 
             
-            #print("1", end="")
+            print("1", end="")
         
             #output[w] = output[w] | (0x80 >> z)
             output[w] = output[w] | (0x01 << z)
 
-        #else:
-        #    print("0", end="")
+        else:
+            print("0", end="")
             
-    #print("")
+    print("")
 
 
 print("")
+
 
 # Print output buffer as ASCII art
 for i in range(8):

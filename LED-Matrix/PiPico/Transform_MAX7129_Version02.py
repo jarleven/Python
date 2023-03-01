@@ -65,7 +65,6 @@ Created on Tue Feb 28 09:36:28 2023
 #                line = _DIGIT0 + y
 #                value = self.buffer[(y * self.num) + m]
 #                print("linje %d  verdi 0x%02x  " % (line, value))
-#                print("%d 0x%02x" % (line, value))
 #                self.spi.write(bytearray([line, value]))
 #            self.cs(1)
 

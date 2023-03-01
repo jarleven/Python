@@ -72,6 +72,8 @@ Created on Tue Feb 28 09:36:28 2023
 
 input = [0x18, 0x18, 0x38, 0x18,  0x18, 0x18, 0x7E, 0x00]
 
+print("")
+
 
 # Print contents of input buffer in HEX format
 for i in range(8):
@@ -89,7 +91,7 @@ for i in range(8):
         if(a & (1 << (7-x))):
             print("█", end="")
         else:
-            print(".", end="")
+            print("-", end="")
     print("")
 
 
@@ -132,7 +134,6 @@ print("")
 for i in range(8):
     
     a=output[i]    
-
 
     for x in range(8):
         if(a & (1 << (7-x))):

@@ -93,10 +93,11 @@ for i in range(8):
     print("")
 
 
+print("")
 
 output = [0x00, 0x00, 0x00, 0x00,  0x00, 0x00, 0x00, 0x00]    
 
-
+# Rotate the input buffer and put the rotated bitfields in the output buffer
 for z in range(8):
 
     line = input[z]
@@ -114,19 +115,18 @@ for z in range(8):
         #if(line & 0x01 << w):
 
             
-            print("1", end="")
+            #print("1", end="")
         
             #output[w] = output[w] | (0x80 >> z)
             output[w] = output[w] | (0x01 << z)
 
-        else:
-            print("0", end="")
+        #else:
+        #    print("0", end="")
             
-    print("")
+    #print("")
 
 
 print("")
-
 
 # Print output buffer as ASCII art
 for i in range(8):
@@ -142,4 +142,9 @@ for i in range(8):
     print("")
 
 
+print("")
+
+# Print contents of the output buffer in HEX format
+for i in range(8):
+        print("  0x%02x" % output[i])   
 

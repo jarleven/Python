@@ -71,86 +71,52 @@ Created on Tue Feb 28 09:36:28 2023
 
 
 
-input = [0x18, 0x18, 0x38, 0x18,  0x18, 0x18, 0x7E, 0x00]
+
+input = [0x18, 0x3c, 0x3c, 0x06, 0x18, 0x66, 0x66, 0x0e, 0x38, 0x06, 0x06, 0x1e, 0x18, 0x0c, 0x1c, 0x66, 0x18, 0x30, 0x06, 0x7f, 0x18, 0x60, 0x66, 0x06, 0x7e, 0x7e, 0x3c, 0x06, 0x00, 0x00, 0x00, 0x00]
+num_matrixes = int(len(input)/8)
+
+
 
 print("")
-
-
-# Print contents of input buffer in HEX format
-for i in range(8):
-        print("  0x%02x" % input[i])    
-    
-
 print("")
 
 # Print input buffer as ASCII art
-for i in range(8):
-    
-    a=input[i]    
-
-    for x in range(8):
-        if(a & (1 << (7-x))):
-            print("█", end="")
-        else:
-            print("-", end="")
-    print("")
-
-
-print("")
-
-
-output = [0x00, 0x00, 0x00, 0x00,  0x00, 0x00, 0x00, 0x00]    
-
-# Rotate the input buffer and put the rotated bitfields in the output buffer
-for z in range(8):
-
-    line = input[z]
-    
-    
-    # Set each bit in output from line
-    
-    # z : Input byte index  / Bit number for output
-    # w : Bit number for input / output buffer byte index
-
-    for w in range (8):
-
+for m in range(num_matrixes):
+    for i in range(8):
         
-        if(line & 0x80 >> w):
-        #if(line & 0x01 << w):
-
-            
-            print("1", end="")
-        
-            #output[w] = output[w] | (0x80 >> z)
-            output[w] = output[w] | (0x01 << z)
-
-        else:
-            print("0", end="")
-            
-    print("")
-
-
-print("")
-
-
-# Print output buffer as ASCII art
-for i in range(8):
+        a=input[i*num_matrixes + m]    
     
-    a=output[i]    
-
-    for x in range(8):
-        if(a & (1 << (7-x))):
-            print("█", end="")
-        else:
-            print("|", end="")
+        for x in range(8):
+            if(a & (1 << (7-x))):
+                print("█", end="")
+            else:
+                print("-", end="")
+        print(" 0x%02x" % a)
+    
+    
     print("")
 
 
-print("")
 
-# Print contents of the output buffer in HEX format
-for i in range(8):
-        print("  0x%02x" % output[i])   
+for y in range(8): # Loop through each line
+    
+    for m in range(num_matrixes):  # Cascade of matrixes
+
+        out = 0
+        for z in range(8):
+            
+            fbindex = (z * num_matrixes) + m
+            value = input[fbindex]
+   
+            if(value & 0x01 << y):          # Test if bit is set
+                out = out | (0x80 >> z)     # Create a new byte from each bit
+                print("█", end="")
+            else:
+                print("|", end="")
+        print(" 0x%02x " % out, end=(""))
+                
+    print("")
+print("")
 
 
 

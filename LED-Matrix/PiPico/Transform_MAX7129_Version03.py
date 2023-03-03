@@ -72,6 +72,10 @@ Created on Tue Feb 28 09:36:28 2023
 
 
 input = [0x18, 0x18, 0x38, 0x18,  0x18, 0x18, 0x7E, 0x00]
+input = [0x3c, 0x66, 0x06, 0x0c,  0x30, 0x60, 0x7e, 0x00 ]
+
+input = [0x18,0x3c,  0x18,0x66,  0x38,0x06,  0x18,0x0c,  0x18,0x30,  0x18,0x60, 0x7e,0x7e,  0x00,0x00 ]
+
 
 print("")
 
@@ -85,21 +89,106 @@ print("")
 
 # Print input buffer as ASCII art
 for i in range(8):
-    
-    a=input[i]    
 
-    for x in range(8):
-        if(a & (1 << (7-x))):
-            print("█", end="")
-        else:
-            print("-", end="")
+    for num in range(2):
+    
+        a=input[i*2 + num]    
+    
+        for x in range(8):
+            if(a & (1 << (7-x))):
+                print("█", end="")
+            else:
+                print("-", end="")
     print("")
 
 
 print("")
 
 
-output = [0x00, 0x00, 0x00, 0x00,  0x00, 0x00, 0x00, 0x00]    
+output = [0x00, 0x00, 0x00, 0x00,  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  0x00, 0x00, 0x00, 0x00]    
+
+
+
+
+line = [0x01, 0x08]
+
+
+# Print input buffer as ASCII art
+for i in range(8):
+
+    a=line[0]
+    b=line[1]    
+    for x in range(8):
+        if(a & (1 << (7-x))):
+            print("█", end="")
+        else:
+                print("|", end="")
+
+        if(b & (1 << (7-x))):
+            print("█", end="")
+        else:
+                print("|", end="")
+
+
+    print("")
+
+
+print("")
+
+
+input = [0x18, 0x18, 0x38, 0x18,  0x18, 0x18, 0x7E, 0x00]
+input = [0x18,0x3c,  0x18,0x66,  0x38,0x06,  0x18,0x0c,  0x18,0x30,  0x18,0x60, 0x7e,0x7e,  0x00,0x00 ]
+
+
+# id is the matrix we read
+def rotate_array(array, numarray, line, id):
+    
+    print("Return first bit from every byte in the matrix")
+
+    out = 0
+    for i in range (8):
+    
+        a=array[i*numarray + id]
+        print("  0x%02x  " % a, end="") 
+
+        if(a & 0x80 >> line):
+            print("1", end="")
+            out = out | 0x80 >> i
+        else:
+           print("0", end="")
+
+        print("")
+        print("0x%02x" % out)
+    
+    for w in range (8):
+
+        
+        if(line & 0x80 >> w):
+        #if(line & 0x01 << w):
+
+            
+            print("1", end="")
+        
+            #output[w] = output[w] | (0x80 >> z)
+            output[w] = output[w] | (0x01 << z)
+
+        else:
+            print("0", end="")
+            
+    print("")
+
+
+print("")
+
+
+
+rotate_array(input, 1, 3, 1)
+
+
+
+exit()
+
+
 
 # Rotate the input buffer and put the rotated bitfields in the output buffer
 for z in range(8):
@@ -152,51 +241,3 @@ print("")
 for i in range(8):
         print("  0x%02x" % output[i])   
 
-
-
-
-
-
-"""
-
-    def show(self):
-      
-        for y in range(8): # Linje num
-            
-            self.cs(0)
-            for m in range(self.num):  # Matrise num
-
-#                for z in range(8): # Linje num
-#                    
-#                    fbindex = (z * self.num) + m
-#                    value = self.buffer[fbindex]
-#                    print("matrix  0x%02x %s" % (value, '{:08b}'.format(value)))
-#                print("")
-#                print("Bit number %d" % y)
-  
-                # Read out the 8xbytes intended for ONE matrix
-                # y is the line being written to the Matrix
-                # m is the matrix being written
-                # z is for reading one matrix and we use the y/line variable to get the transposed byte for this matrix
-      
-                out = 0
-                for z in range(8): # Linje num
-                    
-                    fbindex = (z * self.num) + m
-                    value = self.buffer[fbindex]
-       
-                    if(value & 0x80 >> y):
-                        out = out | (0x80 >> z)
-#                        print("1", end="")
-#                    else:
-#                       print("0", end="")
-
-
-#                print(" transposed 0x%02x" % out)
-#                print("FBid %02d FBval 0x%02x " % (fbindex, value ), end="")
-                self.spi.write(bytearray([_DIGIT0 + y, out]))
-#            print("")
-            self.cs(1)
-
-
-"""

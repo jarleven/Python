@@ -45,7 +45,12 @@ Created on Tue Feb 28 09:36:28 2023
 #
 
 #    THE INTERESTING WRITING TO THE SPI BUS / MAX7219 IS DONE BELOW
+#
 #    https://www.instructables.com/Raspberry-Pi-Pico-MAX7219-8x8-Dot-Matrix-Scrolling/
+#
+#   self.spi.write(bytearray[line,value]) is responsible for writing data to the MAX7291 chip
+
+
 #
 #    def show(self):
 #        for y in range(8):
@@ -55,7 +60,6 @@ Created on Tue Feb 28 09:36:28 2023
 #            self.cs(1)
 
 
-#   self.spi.write(bytearray[line,value]) is responsible for writing data to the MAX7291 chip
 #
 #    def show(self):
 #        for y in range(8):
@@ -73,10 +77,10 @@ Created on Tue Feb 28 09:36:28 2023
 
 #    def show(self):
 #      
-#        for y in range(8): # Linje num
+#        for y in range(8): # Line number
 #            
 #            self.cs(0)
-#            for m in range(self.num):  # Matrise num
+#            for m in range(self.num):  # Matrix number
 #
 #                # Read all data in one matrix 64 LEDs, and modify one line to be written 8 LEDs  
 #                out = 0

@@ -74,11 +74,9 @@ Created on Tue Feb 28 09:36:28 2023
 
 
 
-
+#
 #    def show(self):
-#      
 #        for y in range(8): # Line number
-#            
 #            self.cs(0)
 #            for m in range(self.num):  # Matrix number
 #

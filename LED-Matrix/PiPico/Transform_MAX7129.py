@@ -99,8 +99,17 @@ num = int(len(buffer)/8)
 
 
 ###
-# Print one byte as a bitmap
+# Print one byte as ASCII-art bitmap
 #
+# ---██--- 0x18
+# ---██--- 0x18
+# --███--- 0x38
+# ---██--- 0x18
+# ---██--- 0x18
+# ---██--- 0x18
+# -██████- 0x7e
+# -------- 0x00
+# 
 def print_byte(value):
     
     for i in range(8):
@@ -124,7 +133,6 @@ for y in range(8): # Loop through each line
     
     for m in range(num):  # Cascade of matrixes
 
-        #line = _DIGIT0 + y
         value=buffer[(y*num) + m]    
 
         print_byte(value)
@@ -140,14 +148,14 @@ for y in range(8): # Loop through each line
     for m in range(num):  # Cascade of matrixes
 
         # Loop through one matrix 8 byte (64 bit)
-        # Return one byte representing one line rotated 90 degrees 
+        # Return one byte in the "out" variable. "out" represents one line created from one column 
         out = 0
         for z in range(8):
 
-            a=buffer[z*num + m]    
+            value=buffer[z*num + m]    
    
-            if(a & 0x01 << y):          # Test if bit is set
-                out = out | (0x80 >> z)     # Create a new byte from each bit
+            if(value & 0x01 << y):          # Test if bit is set
+                out = out | (0x80 >> z)     # Create a new byte from each bit in the column
 
         print_byte(out)
                 

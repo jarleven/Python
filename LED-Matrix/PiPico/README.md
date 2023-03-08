@@ -25,3 +25,62 @@
 [![matrix](https://github.com/jarleven/Python/raw/master/LED-Matrix/PiPico/RotateAndMirror.png)](https://github.com/jarleven/Python/raw/master/LED-Matrix/PiPico/RotateAndMirror.mp4)
 
 
+```
+
+luty = [0,1,2,3,4,5,7,6] # Row 
+lutz = [1,0,2,3,4,5,6,7] # Column
+
+###
+# Print Matrix rotated counter-clockwise
+#
+for y in range(8): # Loop through each line
+    
+    for m in range(num):  # Cascade of matrixes
+
+        # Loop through one matrix 8 byte (64 bit)
+        # Return one byte in the "out" variable. "out" represents one line created from one column 
+        out = 0
+        for z in range(8):
+
+            value=buffer[z*num + m]    
+   
+            yy = luty[y]
+            if(value & 0x01 << yy):          # Test if bit is set
+                zz = lutz[z]
+                out = out | (0x80 >> zz)     # Create a new byte from each bit in the column
+        write_byte(out)
+                
+    print("")
+print("")
+
+
+
+
+████████ 0xff █------- 0x80 █------- 0x80 -------█ 0x01 
+-------- 0x00 █------- 0x80 -█------ 0x40 ------█- 0x02 
+-------- 0x00 █------- 0x80 --█----- 0x20 -----█-- 0x04 
+-------- 0x00 █------- 0x80 ---█---- 0x10 ----█--- 0x08 
+-------- 0x00 █------- 0x80 ----█--- 0x08 ---█---- 0x10 
+-------- 0x00 █------- 0x80 -----█-- 0x04 --█----- 0x20 
+-------- 0x00 █------- 0x80 ------█- 0x02 -█------ 0x40 
+-------- 0x00 █------- 0x80 -------█ 0x01 █------- 0x80 
+
+█------- 0x80 -------- 0x00 -------█ 0x01 █------- 0x80 
+█------- 0x80 -------- 0x00 ------█- 0x02 -█------ 0x40 
+█------- 0x80 -------- 0x00 -----█-- 0x04 --█----- 0x20 
+█------- 0x80 -------- 0x00 ----█--- 0x08 ---█---- 0x10 
+█------- 0x80 -------- 0x00 ---█---- 0x10 ----█--- 0x08 
+█------- 0x80 -------- 0x00 --█----- 0x20 -----█-- 0x04 
+█------- 0x80 -------- 0x00 -█------ 0x40 ------█- 0x02 
+█------- 0x80 ████████ 0xff █------- 0x80 -------█ 0x01 
+
+-█------ 0x40 -------- 0x00 -------█ 0x01 -█------ 0x40 
+-█------ 0x40 -------- 0x00 ------█- 0x02 █------- 0x80 
+-█------ 0x40 -------- 0x00 -----█-- 0x04 --█----- 0x20 
+-█------ 0x40 -------- 0x00 ----█--- 0x08 ---█---- 0x10 
+-█------ 0x40 -------- 0x00 ---█---- 0x10 ----█--- 0x08 
+-█------ 0x40 -------- 0x00 --█----- 0x20 -----█-- 0x04 
+-█------ 0x40 ████████ 0xff -█------ 0x40 -------█ 0x01 
+-█------ 0x40 -------- 0x00 █------- 0x80 ------█- 0x02 
+
+```
